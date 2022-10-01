@@ -11,9 +11,6 @@
 # Crash log files
 crash.log
 
-# Ignore provider lock file
-.terraform.lock.hcl
-
 # Ignore any local.tfvars. Most .tfvars files are managed as part of configuration and so should
 # be included in version control.
 local.tfvars
