@@ -4,4 +4,8 @@
 version: 0.1
 
 projects:
-  - name: "Google Cloud Platform - Hierarchy"
+  - name: "Google Cloud Platform - Hierarchy: Production"
+    path: /
+    terraform_var_files:
+      - tfvars/prod.tfvars
+      
