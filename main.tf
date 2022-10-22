@@ -99,37 +99,12 @@ resource "google_cloud_identity_group" "administrative_groups" {
 resource "google_folder" "department" {
   for_each = toset(
     [
-      "DevOps",
-      "Shared",
+      "Shared"
     ]
   )
 
   display_name = each.key
   parent       = "organizations/${var.organization_id}"
-}
-
-resource "google_folder" "devops" {
-  for_each = toset(
-    [
-      "Testing"
-    ]
-  )
-
-  display_name = each.key
-  parent       = google_folder.department["DevOps"].name
-}
-
-resource "google_folder" "devops_testing" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
-
-  display_name = each.key
-  parent       = google_folder.devops["Testing"].name
 }
 
 resource "google_folder" "shared" {
@@ -139,6 +114,7 @@ resource "google_folder" "shared" {
       "Observability",
       "Services",
       "Terraform",
+      "Testing",
       "Workload Identity Federation"
     ]
   )
@@ -197,6 +173,19 @@ resource "google_folder" "shared_terraform" {
 
   display_name = each.key
   parent       = google_folder.shared["Terraform"].name
+}
+
+resource "google_folder" "shared_testing" {
+  for_each = toset(
+    [
+      "Non-Production",
+      "Production",
+      "Sandbox"
+    ]
+  )
+
+  display_name = each.key
+  parent       = google_folder.shared["Testing"].name
 }
 
 resource "google_folder" "shared_workload_identity_federation" {
