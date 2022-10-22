@@ -1,4 +1,4 @@
-# Google Cloud Platform - Hierarchy
+# <img align="left" width="45" height="45" src="https://user-images.githubusercontent.com/1610100/197364582-9f8dd871-4833-464a-b55f-fb6d804870f9.png"> Google Cloud Platform - Hierarchy
 
 **[GitHub Actions](https://github.com/osinfra-io/google-cloud-hierarchy/actions):**
 
