@@ -17,7 +17,7 @@ Metaphorically speaking, the [Google Cloud resource hierarchy](https://cloud.goo
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider_google) | 4.37.0 |
+| <a name="provider_google"></a> [google](#provider_google) | 4.40.0 |
 
 ### Modules
 
@@ -36,6 +36,7 @@ No modules.
 | [google_folder.shared_observability](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
 | [google_folder.shared_services](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
 | [google_folder.shared_terraform](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.shared_workload_identity_federation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
 | [google_organization_iam_member.billing_admins](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/organization_iam_member) | resource |
 | [google_organization_iam_member.devops](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/organization_iam_member) | resource |
 | [google_organization_iam_member.logging_admins](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/organization_iam_member) | resource |

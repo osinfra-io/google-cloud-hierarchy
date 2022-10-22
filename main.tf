@@ -138,7 +138,8 @@ resource "google_folder" "shared" {
       "Logging",
       "Observability",
       "Services",
-      "Terraform"
+      "Terraform",
+      "Workload Identity Federation"
     ]
   )
 
@@ -198,6 +199,19 @@ resource "google_folder" "shared_terraform" {
   parent       = google_folder.shared["Terraform"].name
 }
 
+resource "google_folder" "shared_workload_identity_federation" {
+  for_each = toset(
+    [
+      "Non-Production",
+      "Production",
+      "Sandbox"
+    ]
+  )
+
+  display_name = each.key
+  parent       = google_folder.shared["Workload Identity Federation"].name
+}
+
 # Organization IAM Member Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam#google_organization_iam_member
 
@@ -214,6 +228,7 @@ resource "google_organization_iam_member" "organization_admins" {
       "roles/resourcemanager.organizationAdmin",
       "roles/resourcemanager.folderAdmin",
       "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectDeleter",
       "roles/billing.user",
       "roles/iam.organizationRoleAdmin",
       "roles/orgpolicy.policyAdmin",
