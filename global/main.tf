@@ -4,6 +4,10 @@ terraform {
   # https://www.terraform.io/language/providers/requirements#requiring-providers
 
   required_providers {
+
+    # Google Cloud Platform Provider
+    # https://registry.terraform.io/providers/hashicorp/google/latest/docs
+
     google = {
       source = "hashicorp/google"
     }
@@ -32,6 +36,10 @@ resource "google_cloud_identity_group" "administrative_groups" {
     gcp-billing-admins = {
       description  = "Billing administrators are responsible for setting up billing accounts and monitoring their usage"
       display_name = "Google Cloud Platform Billing Administrators"
+    },
+    gcp-billing-users = {
+      description  = "Billing users are able to attach billing accounts to projects"
+      display_name = "Google Cloud Platform Billing Users"
     },
     gcp-developers = {
       description  = "Developers are responsible for designing, coding, and testing applications"
@@ -245,6 +253,23 @@ resource "google_organization_iam_member" "billing_admins" {
   )
 
   member = "group:${google_cloud_identity_group.administrative_groups["gcp-billing-admins"].group_key[0].id}"
+  org_id = var.organization_id
+  role   = each.key
+}
+
+# Set up billing user access
+# In this step, you grant user access to the gcp-billing-users group by assigning the
+# following roles at the organization level.
+
+resource "google_organization_iam_member" "billing_users" {
+  for_each = toset(
+    [
+      "roles/billing.user",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  )
+
+  member = "group:${google_cloud_identity_group.administrative_groups["gcp-billing-users"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
