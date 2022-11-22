@@ -31,57 +31,12 @@ provider "google" {
 # Cloud Identity Group Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
 
-resource "google_cloud_identity_group" "administrative_groups" {
-  for_each = {
-    gcp-billing-admins = {
-      description  = "Billing administrators are responsible for setting up billing accounts and monitoring their usage"
-      display_name = "Google Cloud Platform Billing Administrators"
-    },
-    gcp-billing-users = {
-      description  = "Billing users are able to attach billing accounts to projects"
-      display_name = "Google Cloud Platform Billing Users"
-    },
-    gcp-developers = {
-      description  = "Developers are responsible for designing, coding, and testing applications"
-      display_name = "Google Cloud Platform Developers"
-    },
-    gcp-devops = {
-      description  = "DevOps practitioners create or manage end-to-end pipelines that support continuous integration and delivery, monitoring, and system provisioning"
-      display_name = "Google Cloud Platform DevOps"
-    },
-    gcp-logging-admins = {
-      description  = "Logging administrators have access to all features of Cloud Logging"
-      display_name = "Google Cloud Platform Logging Administrators"
-    },
-    gcp-logging-viewers = {
-      description  = "Logging viewers have read-only access to a specific subset of logs ingested into Cloud Logging"
-      display_name = "Google Cloud Platform Logging Viewers"
-    },
-    gcp-monitoring-admins = {
-      description  = "Monitoring administrators have access to use and configure all features of Cloud Monitoring"
-      display_name = "Google Cloud Platform Monitoring Administrators"
-    },
-    gcp-monitoring-viewers = {
-      description  = "Monitoring viewers have read-only access to view Cloud Monitoring"
-      display_name = "Google Cloud Platform Monitoring Viewers"
-    },
-    gcp-network-admins = {
-      description  = "Network administrators are responsible for creating networks, subnets, firewall rules, and network devices such as cloud routers, Cloud VPN instances, and load balancers"
-      display_name = "Google Cloud Platform Network Administrators"
-    },
-    gcp-organization-admins = {
-      description  = "Organization administrators have access to administer all resources belonging to the organization"
-      display_name = "Google Cloud Platform Organization Administrators"
-    },
-    gcp-security-admins = {
-      description  = "Security administrators are responsible for establishing and managing security policies for the entire organization, including access management and organization constraint policies"
-      display_name = "Google Cloud Platform Security Administrators"
-    }
-  }
+resource "google_cloud_identity_group" "this" {
+  for_each = var.identity_groups
 
   description          = each.value.description
   display_name         = each.value.display_name
-  initial_group_config = "WITH_INITIAL_OWNER"
+  initial_group_config = "EMPTY"
 
   # When you signed up for Google Workspace or Cloud Identity, your account is assigned a unique customer ID.
   # You can look up this ID in your Admin console.
@@ -100,6 +55,44 @@ resource "google_cloud_identity_group" "administrative_groups" {
     "cloudidentity.googleapis.com/groups.discussion_forum" = ""
   }
 }
+
+# Identity Group Membership
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership
+
+resource "google_cloud_identity_group_membership" "owners" {
+  for_each = { for owner, group_id in local.owners : owner => group_id }
+
+  group = google_cloud_identity_group.this[each.value.group].id
+
+  preferred_member_key {
+    id = "${each.value.owner}@${var.primary_domain}"
+  }
+
+  # MEMBER role must be specified. The order of roles should not be changed.
+
+  roles { name = "OWNER" }
+  roles { name = "MEMBER" }
+}
+
+# resource "google_cloud_identity_group_membership" "managers" {
+#   for_each = var.identity_groups.managers
+
+#   group    = google_cloud_identity_group.this[each.key].id
+#   preferred_member_key { id = each.key }
+
+#   # MEMBER role must be specified. The order of roles should not be changed.
+
+#   #roles { name = "MEMBER" }
+#   roles { name = "MANAGER" }
+# }
+
+# resource "google_cloud_identity_group_membership" "members" {
+#   for_each = var.identity_groups.members
+
+#   group    = google_cloud_identity_group.this[each.key].id
+#   preferred_member_key { id = each.key }
+#   roles { name = "MEMBER" }
+# }
 
 # Folder Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder
@@ -234,7 +227,7 @@ resource "google_organization_iam_member" "organization_admins" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-organization-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-organization-admins"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -252,7 +245,7 @@ resource "google_organization_iam_member" "billing_admins" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-billing-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-billing-admins"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -269,7 +262,7 @@ resource "google_organization_iam_member" "billing_users" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-billing-users"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-billing-users"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -288,7 +281,7 @@ resource "google_organization_iam_member" "network_admins" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-network-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-network-admins"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -304,7 +297,7 @@ resource "google_organization_iam_member" "logging_admins" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-logging-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-logging-admins"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -320,7 +313,7 @@ resource "google_organization_iam_member" "monitoring_admins" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-monitoring-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-monitoring-admins"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -336,7 +329,7 @@ resource "google_organization_iam_member" "monitoring_viewers" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-monitoring-viewers"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-monitoring-viewers"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -360,7 +353,7 @@ resource "google_organization_iam_member" "security_admins" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-security-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-security-admins"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }
@@ -376,7 +369,7 @@ resource "google_organization_iam_member" "devops" {
     ]
   )
 
-  member = "group:${google_cloud_identity_group.administrative_groups["gcp-devops"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this["gcp-devops"].group_key[0].id}"
   org_id = var.organization_id
   role   = each.key
 }

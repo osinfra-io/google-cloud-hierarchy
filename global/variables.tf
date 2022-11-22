@@ -12,6 +12,17 @@ variable "customer_id" {
   sensitive   = true
 }
 
+variable "identity_groups" {
+  description = "Map of identity groups to create with their owners, members, managers, and description"
+  type = map(object({
+    description  = string
+    display_name = string
+    managers     = list(string)
+    members      = list(string)
+    owners       = list(string)
+  }))
+}
+
 variable "organization_id" {
   description = "The organization ID to create the hierarchy under"
   type        = string
