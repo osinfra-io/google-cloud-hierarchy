@@ -60,7 +60,10 @@ resource "google_cloud_identity_group" "this" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership
 
 resource "google_cloud_identity_group_membership" "managers" {
-  for_each = { for manager in local.managers : "${manager.group}.${manager.manager}" => manager }
+
+  # Iterate over local.managers to create a resource for each user in the manager list.
+
+  for_each = { for user in local.managers : "${user.group}.${user.manager}" => user }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -75,7 +78,10 @@ resource "google_cloud_identity_group_membership" "managers" {
 }
 
 resource "google_cloud_identity_group_membership" "members" {
-  for_each = { for member in local.members : "${member.group}.${member.member}" => member }
+
+  # Iterate over local.members to create a resource for each user in the member list.
+
+  for_each = { for user in local.members : "${user.group}.${user.member}" => user }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -87,7 +93,10 @@ resource "google_cloud_identity_group_membership" "members" {
 }
 
 resource "google_cloud_identity_group_membership" "owners" {
-  for_each = { for owner in local.owners : "${owner.group}.${owner.owner}" => owner }
+
+  # Iterate over local.owners to create a resource for each user in the owner list.
+
+  for_each = { for user in local.owners : "${user.group}.${user.owner}" => user }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -215,7 +224,6 @@ resource "google_folder" "shared_workload_identity_federation" {
 # Predefined roles provide granular access for a specific service and are managed by Google Cloud.
 # https://cloud.google.com/iam/docs/understanding-roles#predefined
 
-# Set up organization administrative access
 # In this step, you grant administrative access to the gcp-organization-admins group by assigning the
 # following roles at the organization level.
 
@@ -239,7 +247,6 @@ resource "google_organization_iam_member" "organization_admins" {
   role   = each.key
 }
 
-# Set up billing administrative access
 # In this step, you grant administrative access to the gcp-billing-admins group by assigning the
 # following roles at the organization level.
 
@@ -257,7 +264,6 @@ resource "google_organization_iam_member" "billing_admins" {
   role   = each.key
 }
 
-# Set up billing user access
 # In this step, you grant user access to the gcp-billing-users group by assigning the
 # following roles at the organization level.
 
@@ -274,7 +280,6 @@ resource "google_organization_iam_member" "billing_users" {
   role   = each.key
 }
 
-# Set up network administrative access
 # In this step, you grant administrative access to the gcp-network-admins group by assigning the
 # following roles at the organization level.
 
@@ -293,7 +298,6 @@ resource "google_organization_iam_member" "network_admins" {
   role   = each.key
 }
 
-# Set up logging administrative access
 # In this step, you grant administrative access to the gcp-logging-admins group by assigning the
 # following roles at the organization level.
 
@@ -309,7 +313,6 @@ resource "google_organization_iam_member" "logging_admins" {
   role   = each.key
 }
 
-# Set up monitoring administrative access
 # In this step, you grant administrative access to the gcp-monitoring-admins group by assigning the
 # following roles at the organization level.
 
@@ -325,7 +328,6 @@ resource "google_organization_iam_member" "monitoring_admins" {
   role   = each.key
 }
 
-# Set up monitoring administrative access
 # In this step, you grant administrative access to the gcp-monitoring-viewers group by assigning the
 # following roles at the organization level.
 
@@ -341,7 +343,6 @@ resource "google_organization_iam_member" "monitoring_viewers" {
   role   = each.key
 }
 
-# Set up security administrative access
 # In this step, you grant administrative access to the gcp-security-admins group by assigning the
 # following roles at the organization level.
 
@@ -365,7 +366,6 @@ resource "google_organization_iam_member" "security_admins" {
   role   = each.key
 }
 
-# Set up DevOps access
 # In this step, you grant access to the gcp-devops group by assigning the
 # following roles at the organization level.
 
