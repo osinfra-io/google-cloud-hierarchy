@@ -1,12 +1,14 @@
 # Local Values
 # https://www.terraform.io/language/values/locals
 
-
-# Flatten Function
-# https://developer.hashicorp.com/terraform/language/functions/flatten
-
 locals {
+  # Flatten Function
+  # https://developer.hashicorp.com/terraform/language/functions/flatten
+
   managers = flatten([
+
+    # This will iterate over the object values of the identity_groups map and return a list of the managers
+
     for identity_group_key, group in var.identity_groups : [
       for manager in group.managers : {
         group   = identity_group_key
@@ -15,7 +17,12 @@ locals {
     ]
   ])
 
+
+
   members = flatten([
+
+    # This will iterate over the object values of the identity_groups map and return a list of the members
+
     for identity_group_key, group in var.identity_groups : [
       for member in group.members : {
         group  = identity_group_key
@@ -24,7 +31,11 @@ locals {
     ]
   ])
 
+
   owners = flatten([
+
+    # This will iterate over the object values of the identity_groups map and return a list of the owners
+
     for identity_group_key, group in var.identity_groups : [
       for owner in group.owners : {
         group = identity_group_key

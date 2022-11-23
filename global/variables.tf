@@ -14,13 +14,16 @@ variable "customer_id" {
 
 variable "identity_groups" {
   description = "Map of identity groups to create with their owners, members, managers, and description"
-  type = map(object({
-    description  = string
-    display_name = string
-    managers     = set(string)
-    members      = set(string)
-    owners       = set(string)
-  }))
+  type        = map(any)
+
+  # Is specifying this a better practice? If so is it just for clarity of what the map should look like to the developer populating it?
+  # type = map(object({
+  #   description  = string
+  #   display_name = string
+  #   managers     = set(string)
+  #   members      = set(string)
+  #   owners       = set(string)
+  # }))
 }
 
 variable "organization_id" {

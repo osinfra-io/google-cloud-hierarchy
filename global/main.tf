@@ -60,7 +60,7 @@ resource "google_cloud_identity_group" "this" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership
 
 resource "google_cloud_identity_group_membership" "managers" {
-  for_each = { for manager in local.managers : "${manager.group}-${manager.manager}" => manager }
+  for_each = { for manager in local.managers : "${manager.group}.${manager.manager}" => manager }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -75,7 +75,7 @@ resource "google_cloud_identity_group_membership" "managers" {
 }
 
 resource "google_cloud_identity_group_membership" "members" {
-  for_each = { for member in local.members : "${member.group}-${member.member}" => member }
+  for_each = { for member in local.members : "${member.group}.${member.member}" => member }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -87,7 +87,7 @@ resource "google_cloud_identity_group_membership" "members" {
 }
 
 resource "google_cloud_identity_group_membership" "owners" {
-  for_each = { for owner in local.owners : "${owner.group}-${owner.owner}" => owner }
+  for_each = { for owner in local.owners : "${owner.group}.${owner.owner}" => owner }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
