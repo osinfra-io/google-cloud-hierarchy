@@ -59,8 +59,35 @@ resource "google_cloud_identity_group" "this" {
 # Identity Group Membership
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership
 
+resource "google_cloud_identity_group_membership" "managers" {
+  for_each = { for manager in local.managers : "${manager.group}-${manager.manager}" => manager }
+
+  group = google_cloud_identity_group.this[each.value.group].id
+
+  preferred_member_key {
+    id = "${each.value.manager}@${var.primary_domain}"
+  }
+
+  # MEMBER role must be specified. The order of roles should not be changed.
+
+  roles { name = "MEMBER" }
+  roles { name = "MANAGER" }
+}
+
+resource "google_cloud_identity_group_membership" "members" {
+  for_each = { for member in local.members : "${member.group}-${member.member}" => member }
+
+  group = google_cloud_identity_group.this[each.value.group].id
+
+  preferred_member_key {
+    id = "${each.value.member}@${var.primary_domain}"
+  }
+
+  roles { name = "MEMBER" }
+}
+
 resource "google_cloud_identity_group_membership" "owners" {
-  for_each = { for owner, group_id in local.owners : owner => group_id }
+  for_each = { for owner in local.owners : "${owner.group}-${owner.owner}" => owner }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -73,26 +100,6 @@ resource "google_cloud_identity_group_membership" "owners" {
   roles { name = "OWNER" }
   roles { name = "MEMBER" }
 }
-
-# resource "google_cloud_identity_group_membership" "managers" {
-#   for_each = var.identity_groups.managers
-
-#   group    = google_cloud_identity_group.this[each.key].id
-#   preferred_member_key { id = each.key }
-
-#   # MEMBER role must be specified. The order of roles should not be changed.
-
-#   #roles { name = "MEMBER" }
-#   roles { name = "MANAGER" }
-# }
-
-# resource "google_cloud_identity_group_membership" "members" {
-#   for_each = var.identity_groups.members
-
-#   group    = google_cloud_identity_group.this[each.key].id
-#   preferred_member_key { id = each.key }
-#   roles { name = "MEMBER" }
-# }
 
 # Folder Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder

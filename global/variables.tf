@@ -17,9 +17,9 @@ variable "identity_groups" {
   type = map(object({
     description  = string
     display_name = string
-    managers     = list(string)
-    members      = list(string)
-    owners       = list(string)
+    managers     = set(string)
+    members      = set(string)
+    owners       = set(string)
   }))
 }
 
