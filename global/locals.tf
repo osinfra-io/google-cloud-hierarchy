@@ -10,9 +10,9 @@ locals {
     # This will iterate over the object values of the identity_groups map and return a list of the managers
 
     for identity_group_key, group in var.identity_groups : [
-      for manager in group.managers : {
+      for user in group.managers : {
         group   = identity_group_key
-        manager = manager
+        manager = user
       }
     ]
   ])
@@ -24,9 +24,9 @@ locals {
     # This will iterate over the object values of the identity_groups map and return a list of the members
 
     for identity_group_key, group in var.identity_groups : [
-      for member in group.members : {
+      for user in group.members : {
         group  = identity_group_key
-        member = member
+        member = user
       }
     ]
   ])
@@ -37,9 +37,9 @@ locals {
     # This will iterate over the object values of the identity_groups map and return a list of the owners
 
     for identity_group_key, group in var.identity_groups : [
-      for owner in group.owners : {
+      for user in group.owners : {
         group = identity_group_key
-        owner = owner
+        owner = user
       }
     ]
   ])
