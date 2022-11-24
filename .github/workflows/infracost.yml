@@ -1,0 +1,13 @@
+name: Infracost
+
+on:
+  pull_request:
+
+jobs:
+  infracost:
+    name: Infracost
+    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/infracost.yml@brettcurtis/issue19
+    secrets:
+      git_token: ${{ secrets.GITHUB_TOKEN }}
+      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
+      ssh_key: ${{ secrets.SSH_PRIV_KEY }}
