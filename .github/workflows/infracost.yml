@@ -5,7 +5,7 @@ on:
 
 jobs:
   infracost:
-    name: Infracost
+    name: Diff and Comment to PR
     uses: osinfra-io/github-terraform-called-workflows/.github/workflows/infracost.yml@brettcurtis/issue19
     secrets:
       # git_token: ${{ secrets.GITHUB_TOKEN }}
