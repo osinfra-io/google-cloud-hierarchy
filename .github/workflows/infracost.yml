@@ -9,4 +9,3 @@ jobs:
     uses: osinfra-io/github-terraform-called-workflows/.github/workflows/infracost.yml@brettcurtis/issue19
     secrets:
       infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
-    

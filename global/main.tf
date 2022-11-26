@@ -130,8 +130,8 @@ resource "google_folder" "shared" {
       "Logging",
       "Observability",
       "Services",
-      "Terraform",
-      "Testing",
+      "Terraform Backend",
+      "Kitchen Testing",
       "Workload Identity Federation"
     ]
   )
@@ -189,7 +189,7 @@ resource "google_folder" "shared_terraform" {
   )
 
   display_name = each.key
-  parent       = google_folder.shared["Terraform"].name
+  parent       = google_folder.shared["Terraform Backend"].name
 }
 
 resource "google_folder" "shared_testing" {
@@ -202,7 +202,7 @@ resource "google_folder" "shared_testing" {
   )
 
   display_name = each.key
-  parent       = google_folder.shared["Testing"].name
+  parent       = google_folder.shared["Kitchen Testing"].name
 }
 
 resource "google_folder" "shared_workload_identity_federation" {
