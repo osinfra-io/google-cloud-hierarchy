@@ -1,3 +1,53 @@
+folder_departments = {
+  "department_1" = {
+    display_name = "Shared"
+  }
+}
+
+folder_systems = {
+  "system_1" = {
+    display_name = "Logging"
+    parent       = "department_1"
+  },
+
+  "system_2" = {
+    display_name = "Observability"
+    parent       = "department_1"
+  },
+
+  "system_3" = {
+    display_name = "Services"
+    parent       = "department_1"
+  },
+
+  "system_4" = {
+    display_name = "Terraform Backend"
+    parent       = "department_1"
+  },
+
+  "system_5" = {
+    display_name = "Kitchen Terraform"
+    parent       = "department_1"
+  },
+
+  "system_6" = {
+    display_name = "Workload Identity Federation"
+    parent       = "department_1"
+  }
+}
+
+folder_environments = {
+  "env_1" = {
+    display_name = "Sandbox"
+  }
+  "env_2" = {
+    display_name = "Non-Production"
+  }
+  "env_3" = {
+    display_name = "Production"
+  }
+}
+
 identity_groups = {
   gcp-billing-admins = {
     description  = "Billing administrators are responsible for setting up billing accounts and monitoring their usage"

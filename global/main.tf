@@ -113,109 +113,74 @@ resource "google_cloud_identity_group_membership" "owners" {
 # Folder Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder
 
-resource "google_folder" "department" {
-  for_each = toset(
-    [
-      "Shared"
-    ]
-  )
+# Folder resources optionally provide an additional grouping mechanism and isolation
+# boundaries between projects. They can be seen as sub-organizations within the organization
+#resource. Folder resources can be used to model different legal entities, departments, and
+#teams within a company. For example, a first level of folder resources could be used to
+# represent the main departments in your organization.
 
-  display_name = each.key
+# https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
+
+# Departments
+
+resource "google_folder" "folder_department" {
+  for_each = var.folder_departments
+
+  display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
 
-resource "google_folder" "shared" {
-  for_each = toset(
-    [
-      "Logging",
-      "Observability",
-      "Services",
-      "Terraform Backend",
-      "Kitchen Testing",
-      "Workload Identity Federation"
-    ]
-  )
+# Systems
 
-  display_name = each.key
-  parent       = google_folder.department["Shared"].name
+resource "google_folder" "folder_system" {
+  for_each = var.folder_systems
+
+  display_name = each.value.display_name
+  parent       = google_folder.folder_department[each.value.parent].name
 }
 
-resource "google_folder" "shared_logging" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
+# Environments
 
-  display_name = each.key
-  parent       = google_folder.shared["Logging"].name
+resource "google_folder" "system_1" {
+  for_each = var.folder_environments.sub_folders
+
+  display_name = each.value.display_name
+  parent       = google_folder.folder_system["system_1"].name
 }
 
-resource "google_folder" "shared_observability" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
+resource "google_folder" "system_2" {
+  for_each = var.folder_environments
 
-  display_name = each.key
-  parent       = google_folder.shared["Observability"].name
+  display_name = each.value.display_name
+  parent       = google_folder.folder_system["system_2"].name
 }
 
-resource "google_folder" "shared_services" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
+resource "google_folder" "system_3" {
+  for_each = var.folder_environments
 
-  display_name = each.key
-  parent       = google_folder.shared["Services"].name
+  display_name = each.value.display_name
+  parent       = google_folder.folder_system["system_3"].name
 }
 
-resource "google_folder" "shared_terraform" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
+resource "google_folder" "system_4" {
+  for_each = var.folder_environments
 
-  display_name = each.key
-  parent       = google_folder.shared["Terraform Backend"].name
+  display_name = each.value.display_name
+  parent       = google_folder.folder_system["system_4"].name
 }
 
-resource "google_folder" "shared_testing" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
+resource "google_folder" "system_5" {
+  for_each = var.folder_environments
 
-  display_name = each.key
-  parent       = google_folder.shared["Kitchen Testing"].name
+  display_name = each.value.display_name
+  parent       = google_folder.folder_system["system_5"].name
 }
 
-resource "google_folder" "shared_workload_identity_federation" {
-  for_each = toset(
-    [
-      "Non-Production",
-      "Production",
-      "Sandbox"
-    ]
-  )
+resource "google_folder" "system_6" {
+  for_each = var.folder_environments
 
-  display_name = each.key
-  parent       = google_folder.shared["Workload Identity Federation"].name
+  display_name = each.value.display_name
+  parent       = google_folder.folder_system["system_6"].name
 }
 
 # Organization IAM Member Resource

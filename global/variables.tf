@@ -12,18 +12,37 @@ variable "customer_id" {
   sensitive   = true
 }
 
+variable "folder_departments" {
+  description = "Map of the folder names for departments"
+  type = map(object({
+    display_name = string
+  }))
+}
+
+variable "folder_systems" {
+  description = "Map of the folder names for systems and their parent folder"
+  type = map(object({
+    display_name = string
+    parent       = string
+  }))
+}
+
+variable "folder_environments" {
+  description = "Map of the folder names environments"
+  type = map(object({
+    display_name = string
+  }))
+}
+
 variable "identity_groups" {
   description = "Map of identity groups to create with their owners, members, managers, and description"
-  type        = map(any)
-
-  # Is specifying this a better practice? If so is it just for clarity of what the map should look like to the developer populating it?
-  # type = map(object({
-  #   description  = string
-  #   display_name = string
-  #   managers     = set(string)
-  #   members      = set(string)
-  #   owners       = set(string)
-  # }))
+  type = map(object({
+    description  = string
+    display_name = string
+    managers     = set(string)
+    members      = set(string)
+    owners       = set(string)
+  }))
 }
 
 variable "organization_id" {
