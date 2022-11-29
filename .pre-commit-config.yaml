@@ -9,10 +9,10 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-symlinks
-      # - id: no-commit-to-branch
+      - id: no-commit-to-branch
 
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.2.99
+    rev: 2.2.101
     hooks:
       - id: checkov
         verbose: true
@@ -23,6 +23,8 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_validate
+        args:
+          - --hook-config=--retry-once-with-cleanup=true
       - id: terraform_docs
         args:
           - --hook-config=--path-to-file=README.md
