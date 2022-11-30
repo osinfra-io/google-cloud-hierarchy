@@ -1,50 +1,44 @@
 folder_departments = {
-  "department_1" = {
+  department_1 = {
     display_name = "Shared"
   }
 }
 
 folder_systems = {
-  "system_1" = {
+  system_1 = {
     display_name = "Logging"
+    environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "department_1"
   },
 
-  "system_2" = {
+  system_2 = {
     display_name = "Observability"
+    environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "department_1"
   },
 
-  "system_3" = {
+  system_3 = {
     display_name = "Services"
+    environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "department_1"
   },
 
-  "system_4" = {
+  system_4 = {
     display_name = "Terraform Backend"
+    environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "department_1"
   },
 
-  "system_5" = {
+  system_5 = {
     display_name = "Kitchen Terraform"
+    environments = ["Sandbox"]
     parent       = "department_1"
   },
 
-  "system_6" = {
+  system_6 = {
     display_name = "Workload Identity Federation"
+    environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "department_1"
-  }
-}
-
-folder_environments = {
-  "env_1" = {
-    display_name = "Sandbox"
-  }
-  "env_2" = {
-    display_name = "Non-Production"
-  }
-  "env_3" = {
-    display_name = "Production"
   }
 }
 

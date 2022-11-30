@@ -121,16 +121,12 @@ resource "google_cloud_identity_group_membership" "owners" {
 
 # https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
 
-# Departments
-
 resource "google_folder" "folder_department" {
   for_each = var.folder_departments
 
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
-
-# Systems
 
 resource "google_folder" "folder_system" {
   for_each = var.folder_systems
@@ -139,48 +135,11 @@ resource "google_folder" "folder_system" {
   parent       = google_folder.folder_department[each.value.parent].name
 }
 
-# Environments
+resource "google_folder" "environment" {
+  for_each = { for folder in local.environments : "${folder.system}.${folder.environment}" => folder }
 
-resource "google_folder" "system_1" {
-  for_each = var.folder_environments.sub_folders
-
-  display_name = each.value.display_name
-  parent       = google_folder.folder_system["system_1"].name
-}
-
-resource "google_folder" "system_2" {
-  for_each = var.folder_environments
-
-  display_name = each.value.display_name
-  parent       = google_folder.folder_system["system_2"].name
-}
-
-resource "google_folder" "system_3" {
-  for_each = var.folder_environments
-
-  display_name = each.value.display_name
-  parent       = google_folder.folder_system["system_3"].name
-}
-
-resource "google_folder" "system_4" {
-  for_each = var.folder_environments
-
-  display_name = each.value.display_name
-  parent       = google_folder.folder_system["system_4"].name
-}
-
-resource "google_folder" "system_5" {
-  for_each = var.folder_environments
-
-  display_name = each.value.display_name
-  parent       = google_folder.folder_system["system_5"].name
-}
-
-resource "google_folder" "system_6" {
-  for_each = var.folder_environments
-
-  display_name = each.value.display_name
-  parent       = google_folder.folder_system["system_6"].name
+  display_name = each.value.environment
+  parent       = google_folder.folder_system[each.value.system].name
 }
 
 # Organization IAM Member Resource

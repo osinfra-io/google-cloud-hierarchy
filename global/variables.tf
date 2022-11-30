@@ -23,14 +23,8 @@ variable "folder_systems" {
   description = "Map of the folder names for systems and their parent folder"
   type = map(object({
     display_name = string
+    environments = set(string)
     parent       = string
-  }))
-}
-
-variable "folder_environments" {
-  description = "Map of the folder names environments"
-  type = map(object({
-    display_name = string
   }))
 }
 
