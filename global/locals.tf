@@ -5,6 +5,18 @@ locals {
   # Flatten Function
   # https://developer.hashicorp.com/terraform/language/functions/flatten
 
+  environments = flatten([
+
+    # This will iterate over the object values of the folder_systems map and return a list of the environments
+
+    for folder_system_key, system in var.folder_systems : [
+      for folder in system.environments : {
+        system      = folder_system_key
+        environment = folder
+      }
+    ]
+  ])
+
   managers = flatten([
 
     # This will iterate over the object values of the identity_groups map and return a list of the managers
@@ -17,8 +29,6 @@ locals {
     ]
   ])
 
-
-
   members = flatten([
 
     # This will iterate over the object values of the identity_groups map and return a list of the members
@@ -30,7 +40,6 @@ locals {
       }
     ]
   ])
-
 
   owners = flatten([
 
