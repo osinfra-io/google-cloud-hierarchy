@@ -36,6 +36,7 @@ variable "identity_groups" {
     managers     = set(string)
     members      = set(string)
     owners       = set(string)
+    roles        = set(string)
   }))
 }
 

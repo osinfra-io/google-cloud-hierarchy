@@ -63,7 +63,7 @@ resource "google_cloud_identity_group_membership" "managers" {
 
   # Iterate over local.managers to create a resource for each user in the manager list.
 
-  for_each = { for user in local.managers : "${user.group}.${user.manager}" => user }
+  for_each = { for manager in local.managers : "${manager.group}-${manager.manager}" => manager }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -81,7 +81,7 @@ resource "google_cloud_identity_group_membership" "members" {
 
   # Iterate over local.members to create a resource for each user in the member list.
 
-  for_each = { for user in local.members : "${user.group}.${user.member}" => user }
+  for_each = { for member in local.members : "${member.group}-${member.member}" => member }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -96,7 +96,7 @@ resource "google_cloud_identity_group_membership" "owners" {
 
   # Iterate over local.owners to create a resource for each user in the owner list.
 
-  for_each = { for user in local.owners : "${user.group}.${user.owner}" => user }
+  for_each = { for owner in local.owners : "${owner.group}-${owner.owner}" => owner }
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -121,25 +121,25 @@ resource "google_cloud_identity_group_membership" "owners" {
 
 # https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
 
-resource "google_folder" "folder_department" {
+resource "google_folder" "department" {
   for_each = var.folder_departments
 
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
 
-resource "google_folder" "folder_system" {
+resource "google_folder" "system" {
   for_each = var.folder_systems
 
   display_name = each.value.display_name
-  parent       = google_folder.folder_department[each.value.parent].name
+  parent       = google_folder.department[each.value.parent].name
 }
 
 resource "google_folder" "environment" {
-  for_each = { for folder in local.environments : "${folder.system}.${folder.environment}" => folder }
+  for_each = { for environment in local.environments : "${environment.system}-${lower(environment.environment)}" => environment }
 
   display_name = each.value.environment
-  parent       = google_folder.folder_system[each.value.system].name
+  parent       = google_folder.system[each.value.system].name
 }
 
 # Organization IAM Member Resource
@@ -148,159 +148,12 @@ resource "google_folder" "environment" {
 # Predefined roles provide granular access for a specific service and are managed by Google Cloud.
 # https://cloud.google.com/iam/docs/understanding-roles#predefined
 
-# In this step, you grant administrative access to the gcp-organization-admins group by assigning the
-# following roles at the organization level.
+# In this step, you grant to group by assigning roles at the organization level.
 
-resource "google_organization_iam_member" "organization_admins" {
-  for_each = toset(
-    [
-      "roles/resourcemanager.organizationAdmin",
-      "roles/resourcemanager.folderAdmin",
-      "roles/resourcemanager.projectCreator",
-      "roles/resourcemanager.projectDeleter",
-      "roles/billing.user",
-      "roles/iam.organizationRoleAdmin",
-      "roles/orgpolicy.policyAdmin",
-      "roles/securitycenter.admin",
-      "roles/cloudsupport.admin"
-    ]
-  )
+resource "google_organization_iam_member" "this" {
+  for_each = { for role in local.roles : "${role.group}-${lower(replace(role.role, "/([/.])/", "-"))}" => role }
 
-  member = "group:${google_cloud_identity_group.this["gcp-organization-admins"].group_key[0].id}"
+  member = "group:${google_cloud_identity_group.this[each.value.group].group_key[0].id}"
   org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant administrative access to the gcp-billing-admins group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "billing_admins" {
-  for_each = toset(
-    [
-      "roles/billing.admin",
-      "roles/billing.user",
-      "roles/resourcemanager.organizationViewer"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-billing-admins"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant user access to the gcp-billing-users group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "billing_users" {
-  for_each = toset(
-    [
-      "roles/billing.user",
-      "roles/resourcemanager.organizationViewer"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-billing-users"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant administrative access to the gcp-network-admins group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "network_admins" {
-  for_each = toset(
-    [
-      "roles/compute.networkAdmin",
-      "roles/compute.securityAdmin",
-      "roles/compute.xpnAdmin",
-      "roles/resourcemanager.folderViewer"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-network-admins"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant administrative access to the gcp-logging-admins group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "logging_admins" {
-  for_each = toset(
-    [
-      "roles/logging.admin"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-logging-admins"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant administrative access to the gcp-monitoring-admins group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "monitoring_admins" {
-  for_each = toset(
-    [
-      "roles/monitoring.admin"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-monitoring-admins"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant administrative access to the gcp-monitoring-viewers group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "monitoring_viewers" {
-  for_each = toset(
-    [
-      "roles/monitoring.viewer"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-monitoring-viewers"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant administrative access to the gcp-security-admins group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "security_admins" {
-  for_each = toset(
-    [
-      "roles/orgpolicy.policyAdmin",
-      "roles/iam.securityReviewer",
-      "roles/iam.organizationRoleViewer",
-      "roles/securitycenter.admin",
-      "roles/resourcemanager.folderIamAdmin",
-      "roles/logging.privateLogViewer",
-      "roles/logging.configWriter",
-      "roles/container.viewer",
-      "roles/compute.viewer"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-security-admins"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
-}
-
-# In this step, you grant access to the gcp-devops group by assigning the
-# following roles at the organization level.
-
-resource "google_organization_iam_member" "devops" {
-  for_each = toset(
-    [
-      "roles/resourcemanager.folderViewer"
-    ]
-  )
-
-  member = "group:${google_cloud_identity_group.this["gcp-devops"].group_key[0].id}"
-  org_id = var.organization_id
-  role   = each.key
+  role   = each.value.role
 }
