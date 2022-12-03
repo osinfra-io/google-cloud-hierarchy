@@ -1,44 +1,44 @@
 folder_departments = {
-  department_1 = {
+  department-1 = {
     display_name = "Shared"
   }
 }
 
 folder_systems = {
-  system_1 = {
+  system-1 = {
     display_name = "Logging"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "department_1"
+    parent       = "department-1"
   },
 
-  system_2 = {
+  system-2 = {
     display_name = "Observability"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "department_1"
+    parent       = "department-1"
   },
 
-  system_3 = {
+  system-3 = {
     display_name = "Services"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "department_1"
+    parent       = "department-1"
   },
 
-  system_4 = {
+  system-4 = {
     display_name = "Terraform Backend"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "department_1"
+    parent       = "department-1"
   },
 
-  system_5 = {
+  system-5 = {
     display_name = "Kitchen Terraform"
     environments = ["Sandbox"]
-    parent       = "department_1"
+    parent       = "department-1"
   },
 
-  system_6 = {
+  system-6 = {
     display_name = "Workload Identity Federation"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "department_1"
+    parent       = "department-1"
   }
 }
 
@@ -49,7 +49,12 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/billing.admin",
+      "roles/billing.user",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  }
 
   gcp-billing-users = {
     description  = "Billing users are able to attach billing accounts to projects"
@@ -57,23 +62,11 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
-
-  gcp-developers = {
-    description  = "Developers are responsible for designing, coding, and testing applications"
-    display_name = "Google Cloud Platform Developers"
-    managers     = []
-    members      = []
-    owners       = ["brett"]
-  },
-
-  gcp-devops = {
-    description  = "DevOps practitioners create or manage end-to-end pipelines that support continuous integration and delivery, monitoring, and system provisioning"
-    display_name = "Google Cloud Platform DevOps"
-    managers     = []
-    members      = []
-    owners       = ["brett"]
-  },
+    roles = [
+      "roles/billing.user",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  }
 
   gcp-logging-admins = {
     description  = "Logging administrators have access to all features of Cloud Logging"
@@ -81,7 +74,10 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/logging.admin",
+    ]
+  }
 
   gcp-logging-viewers = {
     description  = "Logging viewers have read-only access to a specific subset of logs ingested into Cloud Logging"
@@ -89,7 +85,11 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/logging.viewer",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  }
 
   gcp-monitoring-admins = {
     description  = "Monitoring administrators have access to use and configure all features of Cloud Monitoring"
@@ -97,7 +97,10 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/monitoring.admin",
+    ]
+  }
 
   gcp-monitoring-viewers = {
     description  = "Monitoring viewers have read-only access to view Cloud Monitoring"
@@ -105,7 +108,10 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/monitoring.viewer",
+    ]
+  }
 
   gcp-network-admins = {
     description  = "Network administrators are responsible for creating networks, subnets, firewall rules, and network devices such as cloud routers, Cloud VPN instances, and load balancers"
@@ -113,7 +119,13 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/compute.xpnAdmin",
+      "roles/resourcemanager.folderViewer"
+    ]
+  }
 
   gcp-organization-admins = {
     description  = "Organization administrators have access to administer all resources belonging to the organization"
@@ -121,7 +133,18 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.folderAdmin",
+      "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectDeleter",
+      "roles/billing.user",
+      "roles/iam.organizationRoleAdmin",
+      "roles/orgpolicy.policyAdmin",
+      "roles/securitycenter.admin",
+      "roles/cloudsupport.admin"
+    ]
+  }
 
   gcp-security-admins = {
     description  = "Security administrators are responsible for establishing and managing security policies for the entire organization, including access management and organization constraint policies"
@@ -129,7 +152,18 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles = [
+      "roles/orgpolicy.policyAdmin",
+      "roles/iam.securityReviewer",
+      "roles/iam.organizationRoleViewer",
+      "roles/securitycenter.admin",
+      "roles/resourcemanager.folderIamAdmin",
+      "roles/logging.privateLogViewer",
+      "roles/logging.configWriter",
+      "roles/container.viewer",
+      "roles/compute.viewer"
+    ]
+  }
 
   github-sa = {
     description  = "Email enabled group for the GitHub Service Account"
@@ -137,7 +171,8 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
-  },
+    roles        = []
+  }
 
   social = {
     description  = "Email enabled group for social media accounts"
@@ -145,5 +180,6 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett"]
+    roles        = []
   }
 }
