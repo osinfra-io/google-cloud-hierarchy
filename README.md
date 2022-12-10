@@ -22,4 +22,4 @@ It's designed to be used with:
 
 ## Terraform Documentation
 
-[**Global**](global/README.md)
+[**Global Infrastructure**](global/infra/README.md)

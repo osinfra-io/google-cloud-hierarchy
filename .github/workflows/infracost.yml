@@ -6,6 +6,6 @@ on:
 jobs:
   infracost:
     name: Infracost
-    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/infracost.yml@brettcurtis/issue19
+    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/infracost.yml@main
     secrets:
       infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}

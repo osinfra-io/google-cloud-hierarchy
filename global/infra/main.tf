@@ -32,7 +32,7 @@ provider "google" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
 
 resource "google_cloud_identity_group" "this" {
-  for_each = var.identity_groups
+  for_each = local.identity_groups
 
   description          = each.value.description
   display_name         = each.value.display_name
@@ -122,14 +122,14 @@ resource "google_cloud_identity_group_membership" "owners" {
 # https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
 
 resource "google_folder" "department" {
-  for_each = var.folder_departments
+  for_each = local.folder_departments
 
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
 
 resource "google_folder" "system" {
-  for_each = var.folder_systems
+  for_each = local.folder_systems
 
   display_name = each.value.display_name
   parent       = google_folder.department[each.value.parent].name

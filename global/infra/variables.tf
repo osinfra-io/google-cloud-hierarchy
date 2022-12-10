@@ -12,34 +12,6 @@ variable "customer_id" {
   sensitive   = true
 }
 
-variable "folder_departments" {
-  description = "Map of the folder names for departments"
-  type = map(object({
-    display_name = string
-  }))
-}
-
-variable "folder_systems" {
-  description = "Map of the folder names for systems and their parent folder"
-  type = map(object({
-    display_name = string
-    environments = set(string)
-    parent       = string
-  }))
-}
-
-variable "identity_groups" {
-  description = "Map of identity groups to create with their owners, members, managers, and description"
-  type = map(object({
-    description  = string
-    display_name = string
-    managers     = set(string)
-    members      = set(string)
-    owners       = set(string)
-    roles        = set(string)
-  }))
-}
-
 variable "organization_id" {
   description = "The organization ID to create the hierarchy under"
   type        = string
