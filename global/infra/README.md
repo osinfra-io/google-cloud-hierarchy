@@ -1,4 +1,4 @@
-# Terraform Global Documentation
+# Terraform Global Infrastructure Documentation
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -9,7 +9,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.44.1 |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.45.0 |
 
 ## Modules
 
@@ -34,9 +34,6 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_billing_project"></a> [billing\_project](#input\_billing\_project) | The quota project to send in `user_project_override`, used for all requests sent from the provider. If set on a resource that supports sending the resource project, this value will supersede the resource project. This field is ignored if `user_project_override` is set to false or unset | `string` | n/a | yes |
 | <a name="input_customer_id"></a> [customer\_id](#input\_customer\_id) | The unique customer ID assigned to you when you signed up for Google Workspace or Cloud Identity. You can look up this ID in your Admin console | `string` | n/a | yes |
-| <a name="input_folder_departments"></a> [folder\_departments](#input\_folder\_departments) | Map of the folder names for departments | <pre>map(object({<br>    display_name = string<br>  }))</pre> | n/a | yes |
-| <a name="input_folder_systems"></a> [folder\_systems](#input\_folder\_systems) | Map of the folder names for systems and their parent folder | <pre>map(object({<br>    display_name = string<br>    environments = set(string)<br>    parent       = string<br>  }))</pre> | n/a | yes |
-| <a name="input_identity_groups"></a> [identity\_groups](#input\_identity\_groups) | Map of identity groups to create with their owners, members, managers, and description | <pre>map(object({<br>    description  = string<br>    display_name = string<br>    managers     = set(string)<br>    members      = set(string)<br>    owners       = set(string)<br>    roles        = set(string)<br>  }))</pre> | n/a | yes |
 | <a name="input_organization_id"></a> [organization\_id](#input\_organization\_id) | The organization ID to create the hierarchy under | `string` | n/a | yes |
 | <a name="input_primary_domain"></a> [primary\_domain](#input\_primary\_domain) | The main domain associated with your Google Workspace account. By default, your users get a username at this domain | `string` | `"osinfra.io"` | no |
 
