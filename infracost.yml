@@ -5,5 +5,5 @@ version: 0.1
 
 projects:
   - name: "google-cloud-hierarchy - Production: Global"
-    path: global
-    usage_file: global/infracost-usage.yml
+    path: global/infra
+    usage_file: global/infra/infracost-usage.yml
