@@ -8,10 +8,10 @@ locals {
   # flatten ensures that this local value is a flat list of objects, rather
   # than a list of lists of objects.
 
-  environments = flatten([
+  environments_flatten = flatten([
 
-    # This will iterate over the object values of the folder_systems map and return a list of maps
-    # based of the environments that includes the system key.
+    # This will iterate over the folder_systems map and return a list of maps based of the values of the environments
+    # that includes the system key.
 
     for folder_system_key, system in local.folder_systems : [
       for environment in system.environments : {
@@ -21,10 +21,14 @@ locals {
     ]
   ])
 
-  managers = flatten([
+  environments = {
+    for environment in local.environments_flatten : "${environment.system}-${lower(environment.environment)}" => environment
+  }
 
-    # This will iterate over the object values of the identity_groups map and return a list of maps
-    # based of the managers that includes the group key.
+  managers_flatten = flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the managers
+    # that includes the group key.
 
     for identity_group_key, group in local.identity_groups : [
       for manager in group.managers : {
@@ -34,10 +38,14 @@ locals {
     ]
   ])
 
-  members = flatten([
+  managers = {
+    for manager in local.managers_flatten : "${manager.group}-${manager.manager}" => manager
+  }
 
-    # This will iterate over the object values of the identity_groups map and return a list of maps
-    # based of the members that includes the group key.
+  members_flatten = flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the members
+    # that includes the group key.
 
     for identity_group_key, group in local.identity_groups : [
       for member in group.members : {
@@ -47,10 +55,14 @@ locals {
     ]
   ])
 
-  owners = flatten([
+  members = {
+    for member in local.members_flatten : "${member.group}-${member.member}" => member
+  }
 
-    # This will iterate over the object values of the identity_groups map and return a list of maps
-    # based of the owners that includes the group key.
+  owners_flatten = flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the owners
+    # that includes the group key.
 
     for identity_group_key, group in local.identity_groups : [
       for owner in group.owners : {
@@ -60,10 +72,14 @@ locals {
     ]
   ])
 
-  roles = flatten([
+  owners = {
+    for owner in local.owners_flatten : "${owner.group}-${owner.owner}" => owner
+  }
 
-    # This will iterate over the object values of the identity_groups map and return a list of maps
-    # based of the roles that includes the group key.
+  roles_flatten = flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the roles
+    # that includes the group key.
 
     for identity_group_key, group in local.identity_groups : [
       for role in group.roles : {
@@ -72,6 +88,10 @@ locals {
       }
     ]
   ])
+
+  roles = {
+    for role in local.roles_flatten : "${role.group}-${lower(replace(role.role, "/([/.])/", "-"))}" => role
+  }
 
   folder_departments = {
     department-1 = {

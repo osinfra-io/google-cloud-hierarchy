@@ -63,7 +63,7 @@ resource "google_cloud_identity_group_membership" "managers" {
 
   # Iterate over local.managers to create a resource for each user in the manager list.
 
-  for_each = { for manager in local.managers : "${manager.group}-${manager.manager}" => manager }
+  for_each = local.managers
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -81,7 +81,7 @@ resource "google_cloud_identity_group_membership" "members" {
 
   # Iterate over local.members to create a resource for each user in the member list.
 
-  for_each = { for member in local.members : "${member.group}-${member.member}" => member }
+  for_each = local.members
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -96,7 +96,7 @@ resource "google_cloud_identity_group_membership" "owners" {
 
   # Iterate over local.owners to create a resource for each user in the owner list.
 
-  for_each = { for owner in local.owners : "${owner.group}-${owner.owner}" => owner }
+  for_each = local.owners
 
   group = google_cloud_identity_group.this[each.value.group].id
 
@@ -136,7 +136,7 @@ resource "google_folder" "system" {
 }
 
 resource "google_folder" "environment" {
-  for_each = { for environment in local.environments : "${environment.system}-${lower(environment.environment)}" => environment }
+  for_each = local.environments
 
   display_name = each.value.environment
   parent       = google_folder.system[each.value.system].name
@@ -151,7 +151,7 @@ resource "google_folder" "environment" {
 # In this step, you grant to group by assigning roles at the organization level.
 
 resource "google_organization_iam_member" "this" {
-  for_each = { for role in local.roles : "${role.group}-${lower(replace(role.role, "/([/.])/", "-"))}" => role }
+  for_each = local.roles
 
   member = "group:${google_cloud_identity_group.this[each.value.group].group_key[0].id}"
   org_id = var.organization_id
