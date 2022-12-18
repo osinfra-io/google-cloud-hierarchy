@@ -73,7 +73,7 @@ locals {
   ])
 
   owners = {
-    for owner in local.owners_flatten : "${owner.group}-${owner.owner}" => owner
+    for owner in local.owners_flatten : "${owner.group}-${trimsuffix(owner.owner, "@")}" => owner
   }
 
   roles_flatten = flatten([
@@ -143,7 +143,7 @@ locals {
       display_name = "Google Cloud Platform Billing Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/billing.admin",
         "roles/billing.user",
@@ -156,7 +156,7 @@ locals {
       display_name = "Google Cloud Platform Billing Users"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/billing.user",
         "roles/resourcemanager.organizationViewer"
@@ -168,7 +168,7 @@ locals {
       display_name = "Google Cloud Platform Logging Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/logging.admin",
       ]
@@ -179,7 +179,7 @@ locals {
       display_name = "Google Cloud Platform Logging Viewers"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/logging.viewer",
         "roles/resourcemanager.organizationViewer"
@@ -191,7 +191,7 @@ locals {
       display_name = "Google Cloud Platform Monitoring Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/monitoring.admin",
       ]
@@ -202,7 +202,7 @@ locals {
       display_name = "Google Cloud Platform Monitoring Viewers"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/monitoring.viewer",
       ]
@@ -213,7 +213,7 @@ locals {
       display_name = "Google Cloud Platform Network Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/compute.networkAdmin",
         "roles/compute.securityAdmin",
@@ -227,7 +227,7 @@ locals {
       display_name = "Google Cloud Platform Organization Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/resourcemanager.organizationAdmin",
         "roles/resourcemanager.folderAdmin",
@@ -246,7 +246,7 @@ locals {
       display_name = "Google Cloud Platform Security Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/orgpolicy.policyAdmin",
         "roles/iam.securityReviewer",
@@ -265,8 +265,53 @@ locals {
       display_name = "GitHub Service Account"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles        = []
+    }
+
+    help = {
+      description  = "Email enabled group for the help"
+      display_name = "Help"
+      managers     = []
+      members      = []
+      owners       = ["brett@osinfra.io"]
+      roles        = []
+    }
+
+    shared-terraform-backend-nonprod = {
+      description  = "Shared group for the Terraform backend in the Non-Production environment"
+      display_name = "Shared Terraform Backend Non-Production"
+      managers     = []
+      members      = []
+      owners       = ["brett@osinfra.io"]
+      roles        = []
+    }
+
+    shared-terraform-backend-prod = {
+      description  = "Shared group for the Terraform backend in the Production environment"
+      display_name = "Shared Terraform Backend Production"
+      managers     = []
+      members      = []
+      owners       = ["brett@osinfra.io"]
+      roles        = []
+    }
+
+    shared-terraform-backend-sb = {
+      description  = "Shared group for the Terraform backend in the Sandbox environment"
+      display_name = "Shared Terraform Backend Sandbox"
+      managers     = []
+
+      members = [
+        "backend-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "identity-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "kitchen-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "logging-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "observability-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "services-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com"
+      ]
+
+      owners = ["brett@osinfra.io"]
+      roles  = []
     }
 
     social = {
@@ -274,7 +319,7 @@ locals {
       display_name = "Social Media"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles        = []
     }
   }
