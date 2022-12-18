@@ -68,7 +68,7 @@ resource "google_cloud_identity_group_membership" "managers" {
   group = google_cloud_identity_group.this[each.value.group].id
 
   preferred_member_key {
-    id = "${each.value.manager}@${var.primary_domain}"
+    id = each.value.manager
   }
 
   # MEMBER role must be specified. The order of roles should not be changed.
@@ -86,7 +86,7 @@ resource "google_cloud_identity_group_membership" "members" {
   group = google_cloud_identity_group.this[each.value.group].id
 
   preferred_member_key {
-    id = "${each.value.member}@${var.primary_domain}"
+    id = each.value.member
   }
 
   roles { name = "MEMBER" }
@@ -101,7 +101,7 @@ resource "google_cloud_identity_group_membership" "owners" {
   group = google_cloud_identity_group.this[each.value.group].id
 
   preferred_member_key {
-    id = "${each.value.owner}@${var.primary_domain}"
+    id = each.value.owner
   }
 
   # MEMBER role must be specified. The order of roles should not be changed.

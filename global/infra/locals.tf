@@ -2,97 +2,6 @@
 # https://www.terraform.io/language/values/locals
 
 locals {
-  # Flatten Function
-  # https://developer.hashicorp.com/terraform/language/functions/flatten
-
-  # flatten ensures that this local value is a flat list of objects, rather
-  # than a list of lists of objects.
-
-  environments_flatten = flatten([
-
-    # This will iterate over the folder_systems map and return a list of maps based of the values of the environments
-    # that includes the system key.
-
-    for folder_system_key, system in local.folder_systems : [
-      for environment in system.environments : {
-        system      = folder_system_key
-        environment = environment
-      }
-    ]
-  ])
-
-  environments = {
-    for environment in local.environments_flatten : "${environment.system}-${lower(environment.environment)}" => environment
-  }
-
-  managers_flatten = flatten([
-
-    # This will iterate over the identity_groups map and return a list of maps based of the values of the managers
-    # that includes the group key.
-
-    for identity_group_key, group in local.identity_groups : [
-      for manager in group.managers : {
-        group   = identity_group_key
-        manager = manager
-      }
-    ]
-  ])
-
-  managers = {
-    for manager in local.managers_flatten : "${manager.group}-${manager.manager}" => manager
-  }
-
-  members_flatten = flatten([
-
-    # This will iterate over the identity_groups map and return a list of maps based of the values of the members
-    # that includes the group key.
-
-    for identity_group_key, group in local.identity_groups : [
-      for member in group.members : {
-        group  = identity_group_key
-        member = member
-      }
-    ]
-  ])
-
-  members = {
-    for member in local.members_flatten : "${member.group}-${member.member}" => member
-  }
-
-  owners_flatten = flatten([
-
-    # This will iterate over the identity_groups map and return a list of maps based of the values of the owners
-    # that includes the group key.
-
-    for identity_group_key, group in local.identity_groups : [
-      for owner in group.owners : {
-        group = identity_group_key
-        owner = owner
-      }
-    ]
-  ])
-
-  owners = {
-    for owner in local.owners_flatten : "${owner.group}-${owner.owner}" => owner
-  }
-
-  roles_flatten = flatten([
-
-    # This will iterate over the identity_groups map and return a list of maps based of the values of the roles
-    # that includes the group key.
-
-    for identity_group_key, group in local.identity_groups : [
-      for role in group.roles : {
-        group = identity_group_key
-        role  = role
-      }
-    ]
-  ])
-
-  roles = {
-    for role in local.roles_flatten : "${role.group}-${lower(replace(role.role, "/([/.])/", "-"))}" => role
-  }
-
   folder_departments = {
     department-1 = {
       display_name = "Shared"
@@ -143,7 +52,7 @@ locals {
       display_name = "Google Cloud Platform Billing Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/billing.admin",
         "roles/billing.user",
@@ -156,7 +65,7 @@ locals {
       display_name = "Google Cloud Platform Billing Users"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/billing.user",
         "roles/resourcemanager.organizationViewer"
@@ -168,7 +77,7 @@ locals {
       display_name = "Google Cloud Platform Logging Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/logging.admin",
       ]
@@ -179,7 +88,7 @@ locals {
       display_name = "Google Cloud Platform Logging Viewers"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/logging.viewer",
         "roles/resourcemanager.organizationViewer"
@@ -191,7 +100,7 @@ locals {
       display_name = "Google Cloud Platform Monitoring Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/monitoring.admin",
       ]
@@ -202,7 +111,7 @@ locals {
       display_name = "Google Cloud Platform Monitoring Viewers"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/monitoring.viewer",
       ]
@@ -213,7 +122,7 @@ locals {
       display_name = "Google Cloud Platform Network Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/compute.networkAdmin",
         "roles/compute.securityAdmin",
@@ -227,7 +136,7 @@ locals {
       display_name = "Google Cloud Platform Organization Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/resourcemanager.organizationAdmin",
         "roles/resourcemanager.folderAdmin",
@@ -246,7 +155,7 @@ locals {
       display_name = "Google Cloud Platform Security Administrators"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles = [
         "roles/orgpolicy.policyAdmin",
         "roles/iam.securityReviewer",
@@ -265,8 +174,53 @@ locals {
       display_name = "GitHub Service Account"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles        = []
+    }
+
+    help = {
+      description  = "Email enabled group for the help"
+      display_name = "Help"
+      managers     = []
+      members      = []
+      owners       = ["brett@osinfra.io"]
+      roles        = []
+    }
+
+    shared-terraform-backend-nonprod = {
+      description  = "Shared group for the Terraform backend in the Non-Production environment"
+      display_name = "Shared Terraform Backend Non-Production"
+      managers     = []
+      members      = []
+      owners       = ["brett@osinfra.io"]
+      roles        = []
+    }
+
+    shared-terraform-backend-prod = {
+      description  = "Shared group for the Terraform backend in the Production environment"
+      display_name = "Shared Terraform Backend Production"
+      managers     = []
+      members      = []
+      owners       = ["brett@osinfra.io"]
+      roles        = []
+    }
+
+    shared-terraform-backend-sb = {
+      description  = "Shared group for the Terraform backend in the Sandbox environment"
+      display_name = "Shared Terraform Backend Sandbox"
+      managers     = []
+
+      members = [
+        "backend-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "identity-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "kitchen-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "logging-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "observability-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com",
+        "services-github-actions@shared-terraform-tfbec6-sb.iam.gserviceaccount.com"
+      ]
+
+      owners = ["brett@osinfra.io"]
+      roles  = []
     }
 
     social = {
@@ -274,8 +228,88 @@ locals {
       display_name = "Social Media"
       managers     = []
       members      = []
-      owners       = ["brett"]
+      owners       = ["brett@osinfra.io"]
       roles        = []
     }
   }
+
+  # Flatten Function
+  # https://developer.hashicorp.com/terraform/language/functions/flatten
+
+  # flatten ensures that this local value is a flat list of objects, rather
+  # than a list of lists of objects.
+
+  environments = { for environment in flatten([
+
+    # This will iterate over the folder_systems map and return a list of maps based of the values of the environments
+    # that includes the system key.
+
+    for folder_system_key, system in local.folder_systems : [
+      for environment in system.environments : {
+        system      = folder_system_key
+        environment = environment
+      }
+    ]
+  ]) : "${environment.system}-${lower(environment.environment)}" => environment }
+
+  managers = { for manager in flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the managers
+    # that includes the group key.
+
+    for identity_group_key, group in local.identity_groups : [
+      for manager in group.managers : {
+        group   = identity_group_key
+        manager = manager
+      }
+    ]
+  ]) : "${manager.group}-${manager.manager}" => manager }
+
+  members = { for member in flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the members
+    # that includes the group key.
+
+    for identity_group_key, group in local.identity_groups : [
+      for member in group.members : {
+        group  = identity_group_key
+        member = member
+      }
+    ]
+  ]) : "${member.group}-${member.member}" => member }
+
+  owners = { for owner in flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the owners
+    # that includes the group key.
+
+    for identity_group_key, group in local.identity_groups : [
+      for owner in group.owners : {
+        group = identity_group_key
+        owner = owner
+
+        # Split Function
+        # https://developer.hashicorp.com/terraform/language/functions/split
+
+        # This will split the owner string into a list of strings based on the @ symbol.
+        # We do this because the owner string is an email address and we want to use the
+        # the group plus the first part of the email address as resource name key.
+
+        owner_split = split("@", owner)
+      }
+    ]
+  ]) : "${owner.group}-${owner.owner_split[0]}" => owner }
+
+  roles = { for role in flatten([
+
+    # This will iterate over the identity_groups map and return a list of maps based of the values of the roles
+    # that includes the group key.
+
+    for identity_group_key, group in local.identity_groups : [
+      for role in group.roles : {
+        group = identity_group_key
+        role  = role
+      }
+    ]
+  ]) : "${role.group}-${lower(replace(role.role, "/([/.])/", "-"))}" => role }
 }
