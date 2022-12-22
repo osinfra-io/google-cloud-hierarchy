@@ -32,7 +32,7 @@ provider "google" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
 
 resource "google_cloud_identity_group" "this" {
-  for_each = local.identity_groups
+  for_each = var.identity_groups
 
   description          = each.value.description
   display_name         = each.value.display_name
@@ -115,21 +115,21 @@ resource "google_cloud_identity_group_membership" "owners" {
 
 # Folder resources optionally provide an additional grouping mechanism and isolation
 # boundaries between projects. They can be seen as sub-organizations within the organization
-#resource. Folder resources can be used to model different legal entities, departments, and
-#teams within a company. For example, a first level of folder resources could be used to
+# resource. Folder resources can be used to model different legal entities, departments, and
+# teams within a company. For example, a first level of folder resources could be used to
 # represent the main departments in your organization.
 
 # https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
 
 resource "google_folder" "department" {
-  for_each = local.folder_departments
+  for_each = var.folder_departments
 
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
 
 resource "google_folder" "system" {
-  for_each = local.folder_systems
+  for_each = var.folder_systems
 
   display_name = each.value.display_name
   parent       = google_folder.department[each.value.parent].name
