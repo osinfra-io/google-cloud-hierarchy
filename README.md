@@ -49,7 +49,7 @@ Simple but comprehensive information for the platform provides a single point of
 
 Contact exclusively via:
 
-- Google Chat: [GitHub](https://chat.google.com/room/AAAAQV2ucwU?cls=7)
+- Google Chat: [Google Cloud Platform](https://chat.google.com/room/AAAAQV2ucwU?cls=7)
 - Phone number:
 
 #### To ask for support or provide feedback
