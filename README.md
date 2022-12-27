@@ -68,14 +68,14 @@ To avoid slowing down [stream-aligned](https://teamtopologies.com/key-concepts) 
 
 See the documentation for setting up a local development environment [here](https://docs.osinfra.io/development-setup).
 
-Tools in use:
+### Tools
 
 - [checkov](https://github.com/bridgecrewio/checkov)
 - [pre-commit](https://github.com/pre-commit/pre-commit)
 - [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform)
 - [terraform-docs](https://github.com/terraform-docs/terraform-docs)
 
-## Skills and Knowledge
+### Skills and Knowledge
 
 Links to documentation and other resources required to develop and iterate in this repository successfully.
 
@@ -83,6 +83,6 @@ Links to documentation and other resources required to develop and iterate in th
 - [Google Cloud Platform groups](https://cloud.google.com/identity/docs/groups)
 - [Google Cloud Platform IAM](https://cloud.google.com/iam/docs/overview)
 
-## Terraform Documentation
+### Terraform Documentation
 
 [**Global Infrastructure**](global/infra/README.md)
