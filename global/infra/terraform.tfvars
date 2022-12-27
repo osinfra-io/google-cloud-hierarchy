@@ -6,7 +6,7 @@ folder_departments = {
 
 folder_systems = {
   system-1 = {
-    display_name = "Logging"
+    display_name = "Audit Logging"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "department-1"
   },
