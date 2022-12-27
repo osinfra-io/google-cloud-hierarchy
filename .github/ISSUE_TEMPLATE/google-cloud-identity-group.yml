@@ -35,7 +35,7 @@ body:
     validations:
       required: false
       
-   - type: input
+  - type: input
     id: google-cloud-identity-group-managers
     attributes:
       label: What you like to add any additinal managers?
@@ -43,7 +43,7 @@ body:
     validations:
       required: false
  
-   - type: input
+  - type: input
     id: google-cloud-identity-group-members
     attributes:
       label: What you like to add any additinal members?
