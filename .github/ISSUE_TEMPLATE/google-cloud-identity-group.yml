@@ -26,7 +26,7 @@ body:
       placeholder: google-cloud-landing-zone-platform
     validations:
       required: true
- 
+
   - type: input
     id: google-cloud-identity-group-owners
     attributes:
@@ -34,7 +34,7 @@ body:
       placeholder: john-doe, billy-bob
     validations:
       required: false
-      
+
   - type: input
     id: google-cloud-identity-group-managers
     attributes:
@@ -42,7 +42,7 @@ body:
       placeholder: mary-joe
     validations:
       required: false
- 
+
   - type: input
     id: google-cloud-identity-group-members
     attributes:
