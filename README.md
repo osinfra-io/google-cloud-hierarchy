@@ -27,7 +27,7 @@ Simple but comprehensive information for the platform provides a single point of
 
 ### Service interfaces
 
-- `google_cloud_identity_group` service interface: [GitHub Issue](https://github.com/osinfra-io/google-cloud-hierarchy/issues)
+- `google_cloud_identity_group` service interface: [GitHub Issue](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&template=google-cloud-identity-group.yml&title=Add+Identity+Group)
 - `google_folder` service interface: [GitHub Issue](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&template=google_folder.yml&title=Add+folder)
 
 ### Response times
