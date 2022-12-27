@@ -1,0 +1,60 @@
+name: Google Cloud Identity Group
+description: Service interface for adding a Google Cloud identity group to the organization
+title: Add Identity Group
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the following details to request a folder in the Google Cloud Platform resource hierarchy.
+
+  - type: input
+    id: contact
+    attributes:
+      label: What is your contact details?
+      description: How can we get in touch with you if we need more info?
+      placeholder: email@example.com
+    validations:
+      required: true
+
+  - type: input
+    id: google-cloud-identity-group
+    attributes:
+      label: What is the name of the group you'd like to add?
+      description: This should include the prefx for your team.
+      placeholder: google-cloud-landing-zone-platform
+    validations:
+      required: true
+ 
+  - type: input
+    id: google-cloud-identity-group-owners
+    attributes:
+      label: What you like to add any additinal owners?
+      placeholder: john-doe, billy-bob
+    validations:
+      required: false
+      
+   - type: input
+    id: google-cloud-identity-group-managers
+    attributes:
+      label: What you like to add any additinal managers?
+      placeholder: mary-joe
+    validations:
+      required: false
+ 
+   - type: input
+    id: google-cloud-identity-group-members
+    attributes:
+      label: What you like to add any additinal members?
+      placeholder: jimmy-james
+    validations:
+      required: false
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Do you have any additional comments?
+      description: Anything else you'd like to add that would help us understand your request better?
+    validations:
+      required: false
