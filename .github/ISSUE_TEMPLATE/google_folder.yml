@@ -1,0 +1,36 @@
+name: GitHub Folder
+description: Service interface for adding Google folders to the organization
+title: Add folder
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the following details to request a folder in the Google Cloud Platform resource hierarchy.
+
+  - type: input
+    id: contact
+    attributes:
+      label: What is your contact details?
+      description: How can we get in touch with you if we need more info?
+      placeholder: email@example.com
+    validations:
+      required: true
+
+  - type: input
+    id: google-folder
+    attributes:
+      label: What is the relitive path for your new folder?
+      description: If the parent doesn't exist we will create it along with the children environment folders.
+      placeholder: Information Technology/Shared
+    validations:
+      required: true
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Do you have any additional comments?
+      description: Anything else you'd like to add that would help us understand your request better?
+    validations:
+      required: false
