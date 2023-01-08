@@ -23,4 +23,4 @@ jobs:
       workload_identity_provider: projects/680727702081/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      terraform_plan_secret_args: -var="organization_id=${{ secrets.ORGANIZATION_ID }}" -var="customer_id=${{ secrets.CUSTOMER_ID }}
+      terraform_plan_secret_args: -var="organization_id=${{ secrets.ORGANIZATION_ID }}" -var="customer_id=${{ secrets.CUSTOMER_ID }}"
