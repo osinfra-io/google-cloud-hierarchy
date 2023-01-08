@@ -187,18 +187,36 @@ identity_groups = {
     description  = "Shared group for the Terraform backend in the Non-Production environment"
     display_name = "Shared Terraform Backend Non-Production"
     managers     = []
-    members      = []
-    owners       = ["brett@osinfra.io"]
-    roles        = []
+
+    members = [
+      "audit-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
+      "backend-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
+      "identity-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
+      "kitchen-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
+      "observability-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
+      "services-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com"
+    ]
+
+    owners = ["brett@osinfra.io"]
+    roles  = []
   }
 
   shared-terraform-backend-prod = {
     description  = "Shared group for the Terraform backend in the Production environment"
     display_name = "Shared Terraform Backend Production"
     managers     = []
-    members      = []
-    owners       = ["brett@osinfra.io"]
-    roles        = []
+
+    members = [
+      "audit-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
+      "backend-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
+      "identity-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
+      "kitchen-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
+      "observability-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
+      "services-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com"
+    ]
+
+    owners = ["brett@osinfra.io"]
+    roles  = []
   }
 
   shared-terraform-backend-sb = {
@@ -207,6 +225,12 @@ identity_groups = {
     managers     = []
 
     members = [
+      "audit-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
+      "backend-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
+      "identity-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
+      "kitchen-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
+      "observability-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
+      "services-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
