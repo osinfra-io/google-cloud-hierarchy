@@ -134,15 +134,16 @@ identity_groups = {
     members      = []
     owners       = ["brett@osinfra.io"]
     roles = [
+      "roles/billing.user",
+      "roles/cloudsupport.admin",
+      "roles/iam.organizationRoleAdmin",
+      "roles/orgpolicy.policyAdmin",
       "roles/resourcemanager.organizationAdmin",
       "roles/resourcemanager.folderAdmin",
       "roles/resourcemanager.projectCreator",
       "roles/resourcemanager.projectDeleter",
-      "roles/billing.user",
-      "roles/iam.organizationRoleAdmin",
-      "roles/orgpolicy.policyAdmin",
       "roles/securitycenter.admin",
-      "roles/cloudsupport.admin"
+      "roles/serviceusage.serviceUsageConsumer"
     ]
   }
 
