@@ -141,9 +141,7 @@ identity_groups = {
       "roles/resourcemanager.organizationAdmin",
       "roles/resourcemanager.folderAdmin",
       "roles/resourcemanager.projectCreator",
-      "roles/resourcemanager.projectDeleter",
-      "roles/securitycenter.admin",
-      "roles/serviceusage.serviceUsageConsumer"
+      "roles/securitycenter.admin"
     ]
   }
 
@@ -154,15 +152,15 @@ identity_groups = {
     members      = []
     owners       = ["brett@osinfra.io"]
     roles = [
-      "roles/orgpolicy.policyAdmin",
+      "roles/compute.viewer",
+      "roles/container.viewer",
       "roles/iam.securityReviewer",
       "roles/iam.organizationRoleViewer",
-      "roles/securitycenter.admin",
-      "roles/resourcemanager.folderIamAdmin",
-      "roles/logging.privateLogViewer",
       "roles/logging.configWriter",
-      "roles/container.viewer",
-      "roles/compute.viewer"
+      "roles/logging.privateLogViewer",
+      "roles/orgpolicy.policyAdmin",
+      "roles/resourcemanager.folderIamAdmin",
+      "roles/securitycenter.admin"
     ]
   }
 
