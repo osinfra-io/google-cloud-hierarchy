@@ -11,7 +11,7 @@ on:
 jobs:
   global_infra:
     name: "Global"
-    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/gcp-plan-and-apply.yml@main
+    uses: osinfra-io/github-terraform-called-workflows/.github/workflows/gcp-plan-and-apply.yml@brettcurtis/issue34
     with:
       checkout_ref: ${{ github.ref }}
       github_environment: "Production Infrastructure: Global"
