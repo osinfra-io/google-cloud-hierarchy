@@ -30,7 +30,7 @@ folder_systems = {
   },
 
   system-5 = {
-    display_name = "Kitchen Terraform"
+    display_name = "Testing"
     environments = ["Sandbox"]
     parent       = "department-1"
   },
