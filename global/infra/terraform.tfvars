@@ -191,7 +191,7 @@ identity_groups = {
       "audit-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
       "backend-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
       "identity-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
-      "kitchen-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
+      "testing-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
       "observability-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com",
       "services-github-actions@shared-terraform-tfd9-nonprod.iam.gserviceaccount.com"
     ]
@@ -209,7 +209,7 @@ identity_groups = {
       "audit-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
       "backend-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
       "identity-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
-      "kitchen-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
+      "testing-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
       "observability-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com",
       "services-github-actions@shared-terraform-tfa8-prod.iam.gserviceaccount.com"
     ]
@@ -227,7 +227,7 @@ identity_groups = {
       "audit-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
       "backend-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
       "identity-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
-      "kitchen-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
+      "testing-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
       "observability-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com",
       "services-github-actions@shared-terraform-tf1e-sb.iam.gserviceaccount.com"
     ]
