@@ -63,8 +63,8 @@ Contact exclusively via:
 
 Contact via any of these:
 
-- Google Chat: [Google Cloud Platform](https://chat.google.com/room/AAAAQV2ucwU?cls=7)
-- Email address: [google-cloud-platform-team@osinfra.io](mailto:google-cloud-platform-team@osinfra.io)
+- Google Chat: [Google Cloud Landing Zone Platform](https://chat.google.com/room/AAAAGFnzIKw?cls=7)
+- Email address: [platform-google-cloud-landing-zone@osinfra.io](mailto:google-cloud-platform-team@osinfra.io)
 - Phone number:
 - Office hours (EST): `Weekdays 5:00 PM - 10:00 PM` `Weekends 8:00 AM - 5:00 PM`
 
