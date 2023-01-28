@@ -23,10 +23,10 @@ terraform {
 # - cloudresourcemanager.googleapis.com
 # - cloudidentity.googleapis.com
 
-# provider "google" {
-#   billing_project       = var.billing_project
-#   user_project_override = true
-# }
+provider "google" {
+  billing_project       = var.billing_project
+  user_project_override = true
+}
 
 # Cloud Identity Group Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
@@ -121,25 +121,25 @@ resource "google_cloud_identity_group_membership" "owners" {
 
 # https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
 
-resource "google_folder" "department" {
-  for_each = var.folder_departments
+resource "google_folder" "team" {
+  for_each = var.folder_teams
 
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
 
-resource "google_folder" "system" {
-  for_each = var.folder_systems
+resource "google_folder" "service" {
+  for_each = var.folder_services
 
   display_name = each.value.display_name
-  parent       = google_folder.department[each.value.parent].name
+  parent       = google_folder.team[each.value.parent].name
 }
 
 resource "google_folder" "environment" {
   for_each = local.environments
 
   display_name = each.value.environment
-  parent       = google_folder.system[each.value.system].name
+  parent       = google_folder.service[each.value.service].name
 }
 
 # Organization IAM Member Resource

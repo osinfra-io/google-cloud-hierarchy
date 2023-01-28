@@ -20,7 +20,7 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 ## <img align="left" width="35" height="35" src="https://user-images.githubusercontent.com/1610100/209340481-2a74c148-f10d-4192-8eae-c88645663824.png"> Team Topologies
 
-Simple but comprehensive information for the platform provides a single point of entry for anyone wanting to know more about the services, report an issue or find out the current status, roadmap, and so on. - [Team Topologies: Thin Platform Template](https://github.com/TeamTopologies/Thin-Platform-template)
+>Simple but comprehensive information for the platform provides a single point of entry for anyone wanting to know more about the services, report an issue or find out the current status, roadmap, and so on. - [Team Topologies: Thin Platform Template](https://github.com/TeamTopologies/Thin-Platform-template)
 
 ### Platform Information
 
@@ -35,12 +35,12 @@ Simple but comprehensive information for the platform provides a single point of
 
 ### Service Interfaces
 
-- `google_cloud_identity_group` service interface: [GitHub Issue](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&template=google-cloud-identity-group.yml&title=Add+Identity+Group)
-- `google_folder` service interface: [GitHub Issue](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&template=google_folder.yml&title=Add+folder)
+- [Add or update identity group](https:)
+- [Add or update folder](https:)
 
 ### Response Times
 
-- Responsible team: [Google Cloud Platform Team](https://github.com/orgs/osinfra-io/teams/google-cloud-platform-team)
+- Responsible team: [Google Cloud Landing Zone Platform](https://github.com/orgs/osinfra-io/teams/platform-google-cloud-landing-zone)
 - Response time for incidents: `60 minutes`
 - Response time for other incidents: `120 minutes`
 - Response time for support:  `60 minutes`
@@ -56,7 +56,7 @@ Simple but comprehensive information for the platform provides a single point of
 
 Contact exclusively via:
 
-- Google Chat: [Google Cloud Platform](https://chat.google.com/room/AAAAQV2ucwU?cls=7)
+- Google Chat: [Google Cloud Landing Zone Platform](https://chat.google.com/room/AAAAGFnzIKw?cls=7)
 - Phone number:
 
 #### To ask for support or provide feedback
@@ -70,7 +70,7 @@ Contact via any of these:
 
 ## <img align="left" width="35" height="35" src="https://user-images.githubusercontent.com/1610100/209029142-410349b7-4b22-40a9-9d4d-729f07e2b4a2.png"> Development
 
-Open Source Infrastructure (as code) is a development model for infrastructure that focuses on open collaboration applying relative lessons learned from software development practices that organizations can use internally at scale. - [Open Source Infrastructure (as Code)](https://www.osinfra.io)
+>Open Source Infrastructure (as code) is a development model for infrastructure that focuses on open collaboration applying relative lessons learned from software development practices that organizations can use internally at scale. - [Open Source Infrastructure (as Code)](https://www.osinfra.io)
 
 To avoid slowing down [stream-aligned](https://teamtopologies.com/key-concepts) teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository describing the tools used, the skills, and the knowledge required, along with Terraform documentation.
 
