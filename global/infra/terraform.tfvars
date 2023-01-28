@@ -102,6 +102,12 @@ identity_groups = {
     managers     = []
 
     members = [
+      "plt-gh-organization-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-audit-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-hierarchy-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -114,6 +120,12 @@ identity_groups = {
     managers     = []
 
     members = [
+      "plt-gh-organization-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-lz-audit-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-lz-hierarchy-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -126,6 +138,12 @@ identity_groups = {
     managers     = []
 
     members = [
+      "plt-gh-organization-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-audit-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-hierarchy-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
