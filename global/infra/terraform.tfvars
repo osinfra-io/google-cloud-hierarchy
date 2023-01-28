@@ -82,7 +82,7 @@ identity_groups = {
   }
 
   help = {
-    description  = "Email enabled group for the help"
+    description  = "Email enabled group for contacting help"
     display_name = "Help"
     managers     = []
     members      = []
@@ -90,9 +90,9 @@ identity_groups = {
     roles        = []
   }
 
-  shared-terraform-backend-nonprod = {
-    description  = "Shared group for the Terraform backend in the Non-Production environment"
-    display_name = "Shared Terraform Backend Non-Production"
+  terraform-backend-nonprod = {
+    description  = "Group for the Terraform backend in the Non-Production environment"
+    display_name = "Terraform Backend Non-Production"
     managers     = []
 
     members = [
@@ -102,9 +102,9 @@ identity_groups = {
     roles  = []
   }
 
-  shared-terraform-backend-prod = {
-    description  = "Shared group for the Terraform backend in the Production environment"
-    display_name = "Shared Terraform Backend Production"
+  terraform-backend-prod = {
+    description  = "Group for the Terraform backend in the Production environment"
+    display_name = "Terraform Backend Production"
     managers     = []
 
     members = [
@@ -114,9 +114,9 @@ identity_groups = {
     roles  = []
   }
 
-  shared-terraform-backend-sb = {
-    description  = "Shared group for the Terraform backend in the Sandbox environment"
-    display_name = "Shared Terraform Backend Sandbox"
+  terraform-backend-sb = {
+    description  = "Group for the Terraform backend in the Sandbox environment"
+    display_name = "Terraform Backend Sandbox"
     managers     = []
 
     members = [
