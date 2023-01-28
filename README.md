@@ -40,7 +40,7 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 ### Response Times
 
-- Responsible team: [Google Cloud Landing Zone Platform](https://github.com/orgs/osinfra-io/teams/platform-google-cloud-landing-zone)
+- Responsible team: [Platform: Google Cloud Landing Zone](https://github.com/orgs/osinfra-io/teams/platform-google-cloud-landing-zone)
 - Response time for incidents: `60 minutes`
 - Response time for other incidents: `120 minutes`
 - Response time for support:  `60 minutes`
