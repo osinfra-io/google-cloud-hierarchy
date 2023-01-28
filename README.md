@@ -40,7 +40,7 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 ### Response Times
 
-- Responsible team: [Platform: Google Cloud Landing Zone](https://github.com/orgs/osinfra-io/teams/platform-google-cloud-landing-zone)
+- Responsible team: [Platform - Google Cloud Landing Zone](https://github.com/orgs/osinfra-io/teams/platform-google-cloud-landing-zone)
 - Response time for incidents: `60 minutes`
 - Response time for other incidents: `120 minutes`
 - Response time for support:  `60 minutes`
@@ -56,15 +56,15 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 Contact exclusively via:
 
-- Google Chat: [Google Cloud Landing Zone Platform](https://chat.google.com/room/AAAAGFnzIKw?cls=7)
+- Google Chat: [Platform - Google Cloud Landing Zone](https://chat.google.com/room/AAAAYvP1tRg?cls=4)
 - Phone number:
 
 #### To ask for support or provide feedback
 
 Contact via any of these:
 
-- Google Chat: [Google Cloud Landing Zone Platform](https://chat.google.com/room/AAAAGFnzIKw?cls=7)
-- Email address: [platform-google-cloud-landing-zone@osinfra.io](mailto:google-cloud-platform-team@osinfra.io)
+- Google Chat: [Platform - Google Cloud Landing Zone](https://chat.google.com/room/AAAAYvP1tRg?cls=4)
+- Email address: [platform-google-cloud-landing-zone@osinfra.io](mailto:platform-google-cloud-landing-zone@osinfra.io)
 - Phone number:
 - Office hours (EST): `Weekdays 5:00 PM - 10:00 PM` `Weekends 8:00 AM - 5:00 PM`
 
