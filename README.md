@@ -35,8 +35,8 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 ### Service Interfaces
 
-- [Add or update identity group](https:)
-- [Add or update folder](https:)
+- [Add or update identity group](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&template=add-update-identity-group.yml&title=Add+or+update+identity+group)
+- [Add or update folder](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&template=add-update-folder.yml&title=Add+or+update+folder)
 
 ### Response Times
 
