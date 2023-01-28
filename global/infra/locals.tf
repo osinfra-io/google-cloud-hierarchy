@@ -11,16 +11,16 @@ locals {
 
   environments = { for environment in flatten([
 
-    # This will iterate over the folder_systems map and return a list of maps based of the values of the environments
-    # that includes the system key.
+    # This will iterate over the folder_services map and return a list of maps based of the values of the environments
+    # that includes the service key.
 
-    for folder_system_key, system in var.folder_systems : [
-      for environment in system.environments : {
-        system      = folder_system_key
+    for folder_service_key, service in var.folder_services : [
+      for environment in service.environments : {
+        service     = folder_service_key
         environment = environment
       }
     ]
-  ]) : "${environment.system}-${lower(environment.environment)}" => environment }
+  ]) : "${environment.service}-${lower(environment.environment)}" => environment }
 
   managers = { for manager in flatten([
 
