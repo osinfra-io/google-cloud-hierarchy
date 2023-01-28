@@ -26,6 +26,12 @@ folder_services = {
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-1"
   }
+
+  service-4 = {
+    display_name = "Testing"
+    environments = ["Sandbox"]
+    parent       = "team-1"
+  }
 }
 
 identity_groups = {
