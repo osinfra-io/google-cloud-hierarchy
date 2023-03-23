@@ -2,9 +2,10 @@ name: Production
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
     paths-ignore:
       - "**.md"
 
