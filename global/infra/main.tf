@@ -123,25 +123,25 @@ resource "google_cloud_identity_group_membership" "owners" {
 
 # https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#folders
 
-resource "google_folder" "team" {
+resource "google_folder" "teams" {
   for_each = var.folder_teams
 
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
 }
 
-resource "google_folder" "service" {
+resource "google_folder" "services" {
   for_each = var.folder_services
 
   display_name = each.value.display_name
-  parent       = google_folder.team[each.value.parent].name
+  parent       = google_folder.teams[each.value.parent].name
 }
 
-resource "google_folder" "environment" {
+resource "google_folder" "environments" {
   for_each = local.environments
 
   display_name = each.value.environment
-  parent       = google_folder.service[each.value.service].name
+  parent       = google_folder.services[each.value.service].name
 }
 
 # Organization IAM Member Resource
@@ -149,8 +149,6 @@ resource "google_folder" "environment" {
 
 # Predefined roles provide granular access for a specific service and are managed by Google Cloud.
 # https://cloud.google.com/iam/docs/understanding-roles#predefined
-
-# In this step, you grant to group by assigning roles at the organization level.
 
 resource "google_organization_iam_member" "this" {
   for_each = local.roles

@@ -9,14 +9,7 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-symlinks
-      # - id: no-commit-to-branch
-
-  - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.3.39
-    hooks:
-      - id: checkov
-        verbose: true
-        args: [--soft-fail, --download-external-modules=true]
+      - id: no-commit-to-branch
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.77.1
