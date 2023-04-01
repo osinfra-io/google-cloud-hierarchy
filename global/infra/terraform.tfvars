@@ -70,6 +70,7 @@ identity_groups = {
       "roles/billing.user",
       "roles/cloudsupport.admin",
       "roles/iam.organizationRoleAdmin",
+      "roles.logging.admin",
       "roles/orgpolicy.policyAdmin",
       "roles/resourcemanager.organizationAdmin",
       "roles/resourcemanager.folderAdmin",
