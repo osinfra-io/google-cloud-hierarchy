@@ -72,9 +72,11 @@ identity_groups = {
       "roles/iam.organizationRoleAdmin",
       "roles/logging.admin",
       "roles/orgpolicy.policyAdmin",
+      "roles/owner",
       "roles/resourcemanager.organizationAdmin",
       "roles/resourcemanager.folderAdmin",
       "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectDeleter",
       "roles/securitycenter.admin"
     ]
   }
