@@ -29,7 +29,7 @@ folder_services = {
 
   service-4 = {
     display_name = "Testing"
-    environments = ["Sandbox", "Non-Production"]
+    environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-1"
   }
 }
