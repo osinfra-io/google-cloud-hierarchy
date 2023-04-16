@@ -20,8 +20,10 @@ jobs:
     uses: osinfra-io/github-terraform-called-workflows/.github/workflows/plan-and-apply.yml@v0.1.4
     with:
       checkout_ref: ${{ github.ref }}
+      environment: production
       github_environment: "Production Infrastructure: Global"
       service_account: plt-lz-hierarchy-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com
+      terraform_plan_args: -var-file=tfvars/production.tfvars
       terraform_state_bucket: plt-lz-hierarchy-e194-prod
       terraform_version: ${{ vars.TERRAFORM_VERSION }}
       terraform_workspace: global-production
@@ -29,4 +31,5 @@ jobs:
       workload_identity_provider: projects/134040294660/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-      terraform_plan_secret_args: -var="organization_id=${{ secrets.ORGANIZATION_ID }}" -var="customer_id=${{ secrets.CUSTOMER_ID }}"
+      infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
+      terraform_plan_secret_args: -var=organization_id=${{ secrets.ORGANIZATION_ID }} -var=customer_id=${{ secrets.CUSTOMER_ID }}

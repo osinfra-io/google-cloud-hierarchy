@@ -4,6 +4,8 @@
 version: 0.1
 
 projects:
-  - name: "google-cloud-hierarchy - Production: Global"
+  - name: "google-cloud-hierarchy - Production Infrastructure: Global"
     path: global/infra
-    usage_file: global/infra/infracost-usage.yml
+    terraform_var_files:
+      - tfvars/production.tfvars
+    usage_file: global/infra/infracost/production.yml
