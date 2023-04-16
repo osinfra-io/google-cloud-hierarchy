@@ -8,8 +8,6 @@
 
 [![infracost](https://img.shields.io/endpoint?label=Monthly%20Cost&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/57318eb1-8a72-432f-8305-4ac7b10c9495/branch/0049fa37-5530-460c-9f8a-ab4824107d09)](https://dashboard.infracost.io/org/osinfra-io/repos/57318eb1-8a72-432f-8305-4ac7b10c9495)
 
-Monthly cost estimates for this module based off these usage values: [infracost-usage.yml](global/infra/infracost-usage.yml)
-
 ## Repository Description
 
 This repository creates a resource hierarchy that aligns with our [Google Cloud landing zone platform](https://docs.osinfra.io/google-cloud-platform/landing-zone) design. A landing zone should be a prerequisite to deploying enterprise workloads in a cloud environment.
@@ -44,7 +42,7 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 ### Roadmap
 
-- Link to roadmap: [GitHub Project](https://github.com/orgs/osinfra-io/projects/5/views/2)
+- Link to roadmap: [GitHub Project](https://github.com/orgs/osinfra-io/projects/1/views/7)
 
 ### Communication Channels
 
@@ -52,14 +50,14 @@ This repository creates a resource hierarchy that aligns with our [Google Cloud 
 
 Contact exclusively via:
 
-- Google Chat: [Platform - Google Cloud Landing Zone](https://chat.google.com/room/AAAAYvP1tRg?cls=4)
+- Discord: [Platform - Google Cloud Landing Zone](https://discord.gg/YPg4AmMDvF)
 - Phone number:
 
 #### To ask for support or provide feedback
 
 Contact via any of these:
 
-- Google Chat: [Platform - Google Cloud Landing Zone](https://chat.google.com/room/AAAAYvP1tRg?cls=4)
+- Discord: [Platform - Google Cloud Landing Zone](https://discord.gg/YPg4AmMDvF)
 - Email address: [platform-google-cloud-landing-zone@osinfra.io](mailto:platform-google-cloud-landing-zone@osinfra.io)
 - Phone number:
 - Office hours (EST): `Weekdays 5:00 PM - 10:00 PM` `Weekends 8:00 AM - 5:00 PM`
@@ -74,7 +72,6 @@ See the documentation for setting up a local development environment [here](http
 
 ### Tools
 
-- [checkov](https://github.com/bridgecrewio/checkov)
 - [pre-commit](https://github.com/pre-commit/pre-commit)
 - [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform)
 - [terraform-docs](https://github.com/terraform-docs/terraform-docs)
