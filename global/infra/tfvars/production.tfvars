@@ -245,6 +245,7 @@ identity_groups = {
     roles = [
       "roles/billing.user",
       "roles/cloudsupport.admin",
+      "roles/compute.xpnAdmin",
       "roles/iam.organizationRoleAdmin",
       "roles/logging.admin",
       "roles/orgpolicy.policyAdmin",
