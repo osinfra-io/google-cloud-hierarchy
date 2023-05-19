@@ -25,10 +25,10 @@ terraform {
 
 # This is only needed during bootstrapping.
 
-provider "google" {
-  billing_project       = var.billing_project
-  user_project_override = true
-}
+# provider "google" {
+#   billing_project       = var.billing_project
+#   user_project_override = true
+# }
 
 # Cloud Identity Group Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
