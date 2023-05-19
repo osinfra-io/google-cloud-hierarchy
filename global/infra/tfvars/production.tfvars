@@ -1,3 +1,179 @@
+folder_iam_policies = {
+  390812006260 = {
+    team        = "Platform - Landing Zone"
+    service     = "Audit Logging"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  988946273293 = {
+    team        = "Platform - Landing Zone"
+    service     = "Audit Logging"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  606239917687 = {
+    team        = "Platform - Landing Zone"
+    service     = "Audit Logging"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  515753002772 = {
+    team        = "Platform - Landing Zone"
+    service     = "Terraform Backend"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      },
+    ]
+  }
+
+  574432336767 = {
+    team        = "Platform - Landing Zone"
+    service     = "Terraform Backend"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  131486843041 = {
+    team        = "Platform - Landing Zone"
+    service     = "Terraform Backend"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  1069400145815 = {
+    team        = "Platform - Landing Zone"
+    service     = "Testing"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/compute.xpnAdmin"
+      }
+    ]
+  }
+
+  1094321749831 = {
+    team        = "Platform - Landing Zone"
+    service     = "Testing"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  642644757390 = {
+    team        = "Platform - Landing Zone"
+    service     = "Testing"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  267179923152 = {
+    team        = "Platform - Landing Zone"
+    service     = "Workload Identity Federation"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  8288220956 = {
+    team        = "Platform - Landing Zone"
+    service     = "Workload Identity Federation"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  679274494921 = {
+    team        = "Platform - Landing Zone"
+    service     = "Workload Identity Federation"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+}
+
 folder_teams = {
   team-1 = {
     display_name = "Platform - Landing Zone"

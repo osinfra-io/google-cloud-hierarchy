@@ -25,10 +25,10 @@ terraform {
 
 # This is only needed during bootstrapping.
 
-# provider "google" {
-#   billing_project       = var.billing_project
-#   user_project_override = true
-# }
+provider "google" {
+  billing_project       = var.billing_project
+  user_project_override = true
+}
 
 # Cloud Identity Group Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
@@ -142,6 +142,26 @@ resource "google_folder" "environment" {
 
   display_name = each.value.environment
   parent       = google_folder.service[each.value.service].name
+}
+
+resource "google_folder_iam_policy" "this" {
+  for_each = var.folder_iam_policies
+
+  folder      = each.key
+  policy_data = data.google_iam_policy.this[each.key].policy_data
+}
+
+data "google_iam_policy" "this" {
+  for_each = var.folder_iam_policies
+
+  dynamic "binding" {
+    for_each = each.value.bindings
+
+    content {
+      members = binding.value.members
+      role    = binding.value.role
+    }
+  }
 }
 
 # Organization IAM Member Resource
