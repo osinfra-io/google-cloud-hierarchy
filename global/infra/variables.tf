@@ -16,6 +16,19 @@ variable "customer_id" {
   sensitive   = true
 }
 
+variable "folder_iam_policies" {
+  description = "A map of authoritative IAM policies for the folder, replaces any existing policy already attached"
+  type = map(object({
+    team        = string
+    service     = string
+    environment = string
+    bindings = list(object({
+      members = list(string)
+      role    = string
+    }))
+  }))
+}
+
 variable "folder_teams" {
   description = "A map of folder teams to create"
   type = map(object({

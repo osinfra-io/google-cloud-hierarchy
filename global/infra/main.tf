@@ -144,6 +144,32 @@ resource "google_folder" "environment" {
   parent       = google_folder.service[each.value.service].name
 }
 
+# Folder IAM Policy Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder_iam#google_folder_iam_policy
+
+resource "google_folder_iam_policy" "this" {
+  for_each = var.folder_iam_policies
+
+  folder      = each.key
+  policy_data = data.google_iam_policy.this[each.key].policy_data
+}
+
+# IAM Policy Data Source
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy
+
+data "google_iam_policy" "this" {
+  for_each = var.folder_iam_policies
+
+  dynamic "binding" {
+    for_each = each.value.bindings
+
+    content {
+      members = binding.value.members
+      role    = binding.value.role
+    }
+  }
+}
+
 # Organization IAM Member Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam#google_organization_iam_member
 
