@@ -220,7 +220,13 @@ folder_services = {
   }
 
   service-6 = {
-    display_name = "Stream Aligned Team"
+    display_name = "Stream Aligned Team - Core Services"
+    environments = ["Sandbox", "Non-Production", "Production"]
+    parent       = "team-2"
+  }
+
+  service-7 = {
+    display_name = "Platform Team - Vault"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-2"
   }
