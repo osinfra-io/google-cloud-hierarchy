@@ -226,7 +226,7 @@ folder_services = {
   }
 
   service-7 = {
-    display_name = "Platform Team - Vault"
+    display_name = "Platform Team - HashiCorp Vault"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-2"
   }
