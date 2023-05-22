@@ -182,6 +182,10 @@ folder_teams = {
   team-2 = {
     display_name = "Platform - Kubernetes Engine"
   }
+
+  team-3 = {
+    display_name = "Platform - Services"
+  }
 }
 
 folder_services = {
@@ -207,6 +211,18 @@ folder_services = {
     display_name = "Testing"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-1"
+  }
+
+  service-5 = {
+    display_name = "Networking"
+    environments = ["Sandbox", "Non-Production", "Production"]
+    parent       = "team-3"
+  }
+
+  service-6 = {
+    display_name = "Stream Aligned Team"
+    environments = ["Sandbox", "Non-Production", "Production"]
+    parent       = "team-2"
   }
 }
 
