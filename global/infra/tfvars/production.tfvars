@@ -176,15 +176,11 @@ folder_iam_policies = {
 
 folder_teams = {
   team-1 = {
-    display_name = "Platform - Landing Zone"
+    display_name = "Platform Teams"
   }
 
   team-2 = {
-    display_name = "Platform - Kubernetes Engine"
-  }
-
-  team-3 = {
-    display_name = "Platform - Services"
+    display_name = "Stream Aligned Teams"
   }
 }
 
@@ -214,21 +210,15 @@ folder_services = {
   }
 
   service-5 = {
-    display_name = "Networking"
+    display_name = "Services"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "team-3"
+    parent       = "team-1"
   }
 
   service-6 = {
-    display_name = "Stream - Core Services"
+    display_name = "HashiCorp Vault"
     environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "team-2"
-  }
-
-  service-7 = {
-    display_name = "Platform - HashiCorp Vault"
-    environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "team-2"
+    parent       = "team-1"
   }
 }
 
