@@ -220,13 +220,13 @@ folder_services = {
   }
 
   service-6 = {
-    display_name = "Stream Aligned Team - Core Services"
+    display_name = "Stream - Core Services"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-2"
   }
 
   service-7 = {
-    display_name = "Platform Team - HashiCorp Vault"
+    display_name = "Platform - HashiCorp Vault"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-2"
   }
