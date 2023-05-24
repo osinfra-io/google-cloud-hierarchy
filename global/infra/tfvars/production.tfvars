@@ -209,11 +209,11 @@ folder_services = {
     parent       = "team-1"
   }
 
-  # service-5 = {
-  #   display_name = "Services"
-  #   environments = ["Sandbox", "Non-Production", "Production"]
-  #   parent       = "team-1"
-  # }
+  service-5 = {
+    display_name = "Services"
+    environments = ["Sandbox", "Non-Production", "Production"]
+    parent       = "team-1"
+  }
 
   service-6 = {
     display_name = "HashiCorp Vault"
