@@ -83,6 +83,48 @@ folder_iam_policies = {
     ]
   }
 
+  515753002772 = {
+    team        = "Platform - Landing Zone"
+    service     = "Services"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  574432336767 = {
+    team        = "Platform - Landing Zone"
+    service     = "Services"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  131486843041 = {
+    team        = "Platform - Landing Zone"
+    service     = "Services"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
   1069400145815 = {
     team        = "Platform - Landing Zone"
     service     = "Testing"
