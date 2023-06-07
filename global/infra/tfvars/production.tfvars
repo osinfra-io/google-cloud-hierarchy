@@ -83,7 +83,7 @@ folder_iam_policies = {
     ]
   }
 
-  515753002772 = {
+  13103602325 = {
     team        = "Platform - Landing Zone"
     service     = "Services"
     environment = "Sandbox"
@@ -97,7 +97,7 @@ folder_iam_policies = {
     ]
   }
 
-  574432336767 = {
+  345391277536 = {
     team        = "Platform - Landing Zone"
     service     = "Services"
     environment = "Non-Production"
@@ -111,7 +111,7 @@ folder_iam_policies = {
     ]
   }
 
-  131486843041 = {
+  1033174574192 = {
     team        = "Platform - Landing Zone"
     service     = "Services"
     environment = "Production"
