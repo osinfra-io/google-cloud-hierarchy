@@ -6,6 +6,12 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -18,6 +24,12 @@ folder_iam_policies = {
     service     = "Audit Logging"
     environment = "Non-Production"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
@@ -34,6 +46,12 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -48,10 +66,17 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
-      },
+      }
+
     ]
   }
 
@@ -60,6 +85,12 @@ folder_iam_policies = {
     service     = "Terraform Backend"
     environment = "Non-Production"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
@@ -76,6 +107,12 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -88,6 +125,12 @@ folder_iam_policies = {
     service     = "Services"
     environment = "Sandbox"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
@@ -104,6 +147,12 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -116,6 +165,12 @@ folder_iam_policies = {
     service     = "Services"
     environment = "Production"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
@@ -132,15 +187,21 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
-          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "group:terraform-backend-sb@osinfra.io"
         ]
-        role = "roles/resourcemanager.projectCreator"
+        role = "roles/resourcemanager.folderIamAdmin"
       },
       {
         members = [
           "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
       }
     ]
   }
@@ -150,6 +211,12 @@ folder_iam_policies = {
     service     = "Testing"
     environment = "Non-Production"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
@@ -166,6 +233,12 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -178,6 +251,12 @@ folder_iam_policies = {
     service     = "Workload Identity Federation"
     environment = "Sandbox"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
@@ -194,6 +273,12 @@ folder_iam_policies = {
     bindings = [
       {
         members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -206,6 +291,12 @@ folder_iam_policies = {
     service     = "Workload Identity Federation"
     environment = "Production"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
       {
         members = [
           "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
