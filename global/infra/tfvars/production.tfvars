@@ -133,7 +133,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -153,7 +153,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -173,7 +173,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -431,7 +431,7 @@ identity_groups = {
       "plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-lz-hierarchy-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
     ]
 
@@ -450,7 +450,7 @@ identity_groups = {
       "plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-hierarchy-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
     ]
 
@@ -469,7 +469,7 @@ identity_groups = {
       "plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-lz-hierarchy-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
     ]
 
