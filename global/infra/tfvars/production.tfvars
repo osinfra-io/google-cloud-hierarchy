@@ -371,15 +371,9 @@ identity_groups = {
   billing-users = {
     description  = "Billing users are able to attach billing accounts to projects"
     display_name = "Billing Users"
-
-    managers = [
-      "plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
-    ]
-
-    members = []
-    owners  = ["brett@osinfra.io"]
+    managers     = []
+    members      = []
+    owners       = ["brett@osinfra.io"]
     roles = [
       "roles/billing.user",
       "roles/resourcemanager.organizationViewer"
