@@ -122,7 +122,7 @@ folder_iam_policies = {
 
   13103602325 = {
     team        = "Platform - Landing Zone"
-    service     = "Services"
+    service     = "Networking"
     environment = "Sandbox"
     bindings = [
       {
@@ -135,6 +135,12 @@ folder_iam_policies = {
         members = [
           "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
         role = "roles/resourcemanager.projectCreator"
       }
     ]
@@ -142,7 +148,7 @@ folder_iam_policies = {
 
   345391277536 = {
     team        = "Platform - Landing Zone"
-    service     = "Services"
+    service     = "Networking"
     environment = "Non-Production"
     bindings = [
       {
@@ -155,6 +161,12 @@ folder_iam_policies = {
         members = [
           "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
         ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
         role = "roles/resourcemanager.projectCreator"
       }
     ]
@@ -162,7 +174,7 @@ folder_iam_policies = {
 
   1033174574192 = {
     team        = "Platform - Landing Zone"
-    service     = "Services"
+    service     = "Networking"
     environment = "Production"
     bindings = [
       {
@@ -170,6 +182,12 @@ folder_iam_policies = {
           "group:terraform-backend-prod@osinfra.io"
         ]
         role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/compute.xpnAdmin"
       },
       {
         members = [
