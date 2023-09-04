@@ -18,6 +18,7 @@ repos:
       - id: terraform_validate
         args:
           - --hook-config=--retry-once-with-cleanup=true
+          - --tf-init-args=-update
       - id: terraform_docs
         args:
           - --hook-config=--path-to-file=README.md
