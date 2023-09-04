@@ -393,6 +393,7 @@ identity_groups = {
     members      = []
     owners       = ["brett@osinfra.io"]
     roles = [
+      "roles/billing.costManager",
       "roles/billing.user",
       "roles/resourcemanager.organizationViewer"
     ]
