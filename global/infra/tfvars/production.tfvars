@@ -439,6 +439,15 @@ identity_groups = {
     roles        = []
   }
 
+  security = {
+    description  = "Email enabled group for the security enabling team"
+    display_name = "Security"
+    managers     = []
+    members      = []
+    owners       = ["brett@osinfra.io"]
+    roles        = []
+  }
+
   terraform-backend-nonprod = {
     description  = "Group for the Terraform backend in the Non-Production environment"
     display_name = "Terraform Backend Non-Production"
