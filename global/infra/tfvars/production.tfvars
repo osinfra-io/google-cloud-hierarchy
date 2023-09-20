@@ -226,12 +226,6 @@ folder_iam_policies = {
         members = [
           "group:platform-contributors@osinfra.io"
         ]
-        role = "roles/resourcemanager.projectDeleter"
-      },
-      {
-        members = [
-          "group:platform-contributors@osinfra.io"
-        ]
         role = "roles/resourcemanager.projectOwner"
       }
     ]
