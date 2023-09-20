@@ -452,7 +452,7 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett@osinfra.io"]
-    roles        = ["roles/viewer"]
+    roles        = []
   }
 
   security = {
