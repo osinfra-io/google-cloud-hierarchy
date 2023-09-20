@@ -217,9 +217,16 @@ folder_iam_policies = {
       },
       {
         members = [
+          "group:platform-contributors@osinfra.io",
           "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
+      },
+      {
+        members = [
+          "group:platform-contributors@osinfra.io"
+        ]
+        role = "roles/resourcemanager.projectOwner"
       }
     ]
   }
@@ -390,13 +397,31 @@ identity_groups = {
     description  = "Billing users are able to attach billing accounts to projects"
     display_name = "Billing Users"
     managers     = []
-    members      = []
+    members      = ["platform-contributors@osinfra.io"]
     owners       = ["brett@osinfra.io"]
     roles = [
       "roles/billing.costsManager",
       "roles/billing.user",
       "roles/resourcemanager.organizationViewer"
     ]
+  }
+
+  github-sa = {
+    description  = "Email enabled group for the GitHub Service Account"
+    display_name = "GitHub Service Account"
+    managers     = []
+    members      = []
+    owners       = ["brett@osinfra.io"]
+    roles        = []
+  }
+
+  help = {
+    description  = "Email enabled group for contacting help"
+    display_name = "Help"
+    managers     = []
+    members      = []
+    owners       = ["brett@osinfra.io"]
+    roles        = []
   }
 
   organization-admins = {
@@ -421,18 +446,9 @@ identity_groups = {
     ]
   }
 
-  github-sa = {
-    description  = "Email enabled group for the GitHub Service Account"
-    display_name = "GitHub Service Account"
-    managers     = []
-    members      = []
-    owners       = ["brett@osinfra.io"]
-    roles        = []
-  }
-
-  help = {
-    description  = "Email enabled group for contacting help"
-    display_name = "Help"
+  platform-contributors = {
+    description  = "Platform contributors are able to contribute to the platform"
+    display_name = "Platform Contributors"
     managers     = []
     members      = []
     owners       = ["brett@osinfra.io"]
