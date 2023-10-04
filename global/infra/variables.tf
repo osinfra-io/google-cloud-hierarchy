@@ -21,12 +21,6 @@ variable "customer_id" {
   sensitive   = true
 }
 
-variable "default_monthly_budget_amount" {
-  description = "The default monthly budget amount in USD"
-  type        = number
-  default     = 50
-}
-
 variable "folder_iam_policies" {
   description = "A map of authoritative IAM policies for the folder, replaces any existing policy already attached"
   type = map(object({
@@ -67,6 +61,12 @@ variable "identity_groups" {
     owners       = list(string)
     roles        = list(string)
   }))
+}
+
+variable "organization_monthly_budget_amount" {
+  description = "The organization monthly budget amount in USD"
+  type        = number
+  default     = 50
 }
 
 variable "organization_id" {

@@ -37,12 +37,12 @@ resource "google_billing_budget" "organization" {
   amount {
     specified_amount {
       currency_code = "USD"
-      units         = var.default_monthly_budget_amount
+      units         = var.organization_monthly_budget_amount
     }
   }
 
   billing_account = var.billing_account
-  display_name = "Organization Monthly"
+  display_name    = "Organization Monthly"
 
   threshold_rules {
     threshold_percent = 0.50
