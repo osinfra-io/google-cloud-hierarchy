@@ -43,10 +43,6 @@ resource "google_billing_budget" "organization" {
 
   billing_account = var.billing_account
 
-  budget_filter {
-    credit_types_treatment = "INCLUDE_ALL_CREDITS"
-  }
-
   display_name = "Organization Monthly"
 
 
