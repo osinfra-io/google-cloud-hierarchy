@@ -1,6 +1,11 @@
 # Input Variables
 # https://www.terraform.io/language/values/variables
 
+variable "billing_account" {
+  description = "The alphanumeric ID of the billing account this project belongs to"
+  type        = string
+  sensitive   = true
+}
 
 # The google_cloud_identity_group resource requires this if you are using User ADCs (Application Default Credentials).
 # This is only needed during bootstrapping.
@@ -14,6 +19,12 @@ variable "customer_id" {
   description = "The unique customer ID assigned to you when you signed up for Google Workspace or Cloud Identity. You can look up this ID in your Admin console"
   type        = string
   sensitive   = true
+}
+
+variable "default_monthly_budget_amount" {
+  description = "The default monthly budget amount in USD"
+  type        = number
+  default     = 50
 }
 
 variable "folder_iam_policies" {
@@ -39,9 +50,10 @@ variable "folder_teams" {
 variable "folder_services" {
   description = "A map of folder services to create"
   type = map(object({
-    display_name = string
-    environments = list(string)
-    parent       = string
+    display_name          = string
+    environments          = list(string)
+    monthly_budget_amount = optional(number, 10)
+    parent                = string
   }))
 }
 
