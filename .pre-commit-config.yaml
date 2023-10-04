@@ -21,8 +21,8 @@ repos:
 
       - id: terraform_validate
         args:
-          - --tf-init-args=-upgrade
           - --hook-config=--retry-once-with-cleanup=true
+          - --tf-init-args=-upgrade
 
       # Always run after terraform_validate
 
