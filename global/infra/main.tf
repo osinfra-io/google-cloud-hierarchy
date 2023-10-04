@@ -30,6 +30,70 @@ terraform {
 #   user_project_override = true
 # }
 
+# Billing Budget Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/billing_budget
+
+resource "google_billing_budget" "organization" {
+  amount {
+    specified_amount {
+      currency_code = "USD"
+      units         = var.organization_monthly_budget_amount
+    }
+  }
+
+  billing_account = var.billing_account
+  display_name    = "Organization Monthly"
+
+  threshold_rules {
+    threshold_percent = 0.50
+    spend_basis       = "CURRENT_SPEND"
+  }
+
+  threshold_rules {
+    threshold_percent = 0.75
+    spend_basis       = "CURRENT_SPEND"
+  }
+
+  threshold_rules {
+    threshold_percent = 1.0
+    spend_basis       = "CURRENT_SPEND"
+  }
+}
+
+resource "google_billing_budget" "services" {
+  for_each = var.folder_services
+
+  amount {
+    specified_amount {
+      currency_code = "USD"
+      units         = each.value.monthly_budget_amount
+    }
+  }
+
+  billing_account = var.billing_account
+
+  budget_filter {
+    resource_ancestors = [google_folder.service[each.key].id]
+  }
+
+  display_name = "${each.value.display_name} Monthly"
+
+  threshold_rules {
+    threshold_percent = 0.50
+    spend_basis       = "CURRENT_SPEND"
+  }
+
+  threshold_rules {
+    threshold_percent = 0.75
+    spend_basis       = "CURRENT_SPEND"
+  }
+
+  threshold_rules {
+    threshold_percent = 1.0
+    spend_basis       = "CURRENT_SPEND"
+  }
+}
+
 # Cloud Identity Group Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
 
