@@ -42,9 +42,7 @@ resource "google_billing_budget" "organization" {
   }
 
   billing_account = var.billing_account
-
   display_name = "Organization Monthly"
-
 
   threshold_rules {
     threshold_percent = 0.50
