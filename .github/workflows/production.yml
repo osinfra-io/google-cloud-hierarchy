@@ -35,4 +35,4 @@ jobs:
       terraform_plan_secret_args: >-
         -var=billing_account=${{ secrets.BILLING_ACCOUNT }}
         -var=customer_id=${{ secrets.CUSTOMER_ID }}
-        -var=organization_id=${{ secrets.ORGANIZATION_ID }} 
+        -var=organization_id=${{ secrets.ORGANIZATION_ID }}

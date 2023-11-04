@@ -25,10 +25,26 @@ terraform {
 
 # This is only needed during bootstrapping.
 
-# provider "google" {
-#   billing_project       = var.billing_project
-#   user_project_override = true
-# }
+provider "google" {
+  billing_project       = var.billing_project
+  user_project_override = true
+}
+
+# IAM Policy Data Source
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy
+
+data "google_iam_policy" "this" {
+  for_each = var.folder_iam_policies
+
+  dynamic "binding" {
+    for_each = each.value.bindings
+
+    content {
+      members = binding.value.members
+      role    = binding.value.role
+    }
+  }
+}
 
 # Billing Budget Resource
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/billing_budget
@@ -218,20 +234,19 @@ resource "google_folder_iam_policy" "this" {
   policy_data = data.google_iam_policy.this[each.key].policy_data
 }
 
-# IAM Policy Data Source
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy
+# Organization IAM Custom Role Resource
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam_custom_role
 
-data "google_iam_policy" "this" {
-  for_each = var.folder_iam_policies
+resource "google_organization_iam_custom_role" "this" {
+  for_each = var.organization_custom_iam_roles
 
-  dynamic "binding" {
-    for_each = each.value.bindings
+  org_id  = var.organization_id
+  role_id = each.value.role_id
 
-    content {
-      members = binding.value.members
-      role    = binding.value.role
-    }
-  }
+  title       = each.value.title
+  description = each.value.description
+
+  permissions = each.value.permissions
 }
 
 # Organization IAM Member Resource

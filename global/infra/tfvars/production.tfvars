@@ -530,3 +530,22 @@ identity_groups = {
     roles        = []
   }
 }
+
+organization_custom_iam_roles = {
+  host-gke-firewall-management = {
+    description = "Allows for a GKE cluster in a service project to create and manage the firewall resources in your host project"
+    permissions = [
+      "compute.firewalls.create",
+      "compute.firewalls.delete",
+      "compute.firewalls.get",
+      "compute.firewalls.list",
+      "compute.firewalls.update",
+      "compute.networks.updatePolicy"
+    ]
+
+    # Align with Google's role naming convention
+
+    role_id = "kubernetes.hostFirewallManagement"
+    title   = "Host Kubernetes Firewall Management"
+  }
+}
