@@ -1,6 +1,5 @@
 folder_iam_policies = {
   390812006260 = {
-    team        = "Platform - Landing Zone"
     service     = "Audit Logging"
     environment = "Sandbox"
     bindings = [
@@ -20,7 +19,6 @@ folder_iam_policies = {
   }
 
   988946273293 = {
-    team        = "Platform - Landing Zone"
     service     = "Audit Logging"
     environment = "Non-Production"
     bindings = [
@@ -40,7 +38,6 @@ folder_iam_policies = {
   }
 
   606239917687 = {
-    team        = "Platform - Landing Zone"
     service     = "Audit Logging"
     environment = "Production"
     bindings = [
@@ -59,9 +56,8 @@ folder_iam_policies = {
     ]
   }
 
-  515753002772 = {
-    team        = "Platform - Landing Zone"
-    service     = "Terraform Backend"
+  589091281803 = {
+    service     = "Kubernetes"
     environment = "Sandbox"
     bindings = [
       {
@@ -72,17 +68,15 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
-
     ]
   }
 
-  574432336767 = {
-    team        = "Platform - Landing Zone"
-    service     = "Terraform Backend"
+  308872035878 = {
+    service     = "Kubernetes"
     environment = "Non-Production"
     bindings = [
       {
@@ -93,16 +87,15 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
     ]
   }
 
-  131486843041 = {
-    team        = "Platform - Landing Zone"
-    service     = "Terraform Backend"
+  450746270117 = {
+    service     = "Kubernetes"
     environment = "Production"
     bindings = [
       {
@@ -113,7 +106,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -121,7 +114,6 @@ folder_iam_policies = {
   }
 
   13103602325 = {
-    team        = "Platform - Landing Zone"
     service     = "Networking"
     environment = "Sandbox"
     bindings = [
@@ -147,7 +139,6 @@ folder_iam_policies = {
   }
 
   345391277536 = {
-    team        = "Platform - Landing Zone"
     service     = "Networking"
     environment = "Non-Production"
     bindings = [
@@ -173,7 +164,6 @@ folder_iam_policies = {
   }
 
   1033174574192 = {
-    team        = "Platform - Landing Zone"
     service     = "Networking"
     environment = "Production"
     bindings = [
@@ -198,8 +188,65 @@ folder_iam_policies = {
     ]
   }
 
+  515753002772 = {
+    service     = "Terraform Backend"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+
+    ]
+  }
+
+  574432336767 = {
+    service     = "Terraform Backend"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  131486843041 = {
+    service     = "Terraform Backend"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
   1069400145815 = {
-    team        = "Platform - Landing Zone"
     service     = "Testing"
     environment = "Sandbox"
     bindings = [
@@ -232,7 +279,6 @@ folder_iam_policies = {
   }
 
   1094321749831 = {
-    team        = "Platform - Landing Zone"
     service     = "Testing"
     environment = "Non-Production"
     bindings = [
@@ -252,7 +298,6 @@ folder_iam_policies = {
   }
 
   642644757390 = {
-    team        = "Platform - Landing Zone"
     service     = "Testing"
     environment = "Production"
     bindings = [
@@ -272,7 +317,6 @@ folder_iam_policies = {
   }
 
   267179923152 = {
-    team        = "Platform - Landing Zone"
     service     = "Workload Identity Federation"
     environment = "Sandbox"
     bindings = [
@@ -292,7 +336,6 @@ folder_iam_policies = {
   }
 
   8288220956 = {
-    team        = "Platform - Landing Zone"
     service     = "Workload Identity Federation"
     environment = "Non-Production"
     bindings = [
@@ -312,7 +355,6 @@ folder_iam_policies = {
   }
 
   679274494921 = {
-    team        = "Platform - Landing Zone"
     service     = "Workload Identity Federation"
     environment = "Production"
     bindings = [
@@ -375,6 +417,12 @@ folder_services = {
 
   service-6 = {
     display_name = "HashiCorp Vault"
+    environments = ["Sandbox", "Non-Production", "Production"]
+    parent       = "team-1"
+  }
+
+  service-7 = {
+    display_name = "Kubernetes"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-1"
   }
