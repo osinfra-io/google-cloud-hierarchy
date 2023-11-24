@@ -68,6 +68,12 @@ folder_iam_policies = {
       },
       {
         members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -87,6 +93,12 @@ folder_iam_policies = {
       },
       {
         members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
           "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
@@ -103,6 +115,12 @@ folder_iam_policies = {
           "group:terraform-backend-prod@osinfra.io"
         ]
         role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
       },
       {
         members = [
