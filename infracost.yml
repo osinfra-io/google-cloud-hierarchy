@@ -1,11 +1,10 @@
-# Infracost Config File
-# https://www.infracost.io/docs/features/config_file
+# Infracost Template
+# https://www.infracost.io/docs/features/config_file/#template-syntax
 
 version: 0.1
-
 projects:
-  - name: "google-cloud-hierarchy - Production Infrastructure: Global"
-    path: global/infra
-    terraform_var_files:
-      - tfvars/production.tfvars
-    usage_file: global/infra/infracost/production.yml
+    - path: global/infra
+      name: "global/infra: production"
+      terraform_var_files:
+        - tfvars/production.tfvars
+      usage_file: global/infra/infracost/production.yml

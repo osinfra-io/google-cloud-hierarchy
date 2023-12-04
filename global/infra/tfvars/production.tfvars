@@ -55,7 +55,7 @@ folder_iam_policies = {
       }
     ]
   }
-  
+
   717171519290 = {
     service     = "Backstage"
     environment = "Sandbox"
@@ -74,7 +74,7 @@ folder_iam_policies = {
       }
     ]
   }
-  
+
   38257772554 = {
     service     = "Backstage"
     environment = "Production"
@@ -87,7 +87,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          #"serviceAccount:plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -496,16 +496,31 @@ identity_groups = {
     display_name = "Backstage"
     managers     = []
     members      = []
-    owners       = [
+    owners = [
       "brett@osinfra.io",
 
       # These service accounts create the IAP brands in the sandbox and production environments
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
-      "plt-backstage-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      # "plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
-      ]
-    roles        = []
+      "plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+    ]
+    roles = []
+  }
+
+  backstage-sb = {
+    description  = "IAP group for Backstage Sandbox"
+    display_name = "Backstage Sandbox"
+    managers     = []
+    members      = []
+    owners = [
+      "brett@osinfra.io",
+
+      # These service accounts create the IAP brands in the sandbox and production environments
+      # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
+
+      "plt-backstage-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+    ]
+    roles = []
   }
 
   billing-admins = {
