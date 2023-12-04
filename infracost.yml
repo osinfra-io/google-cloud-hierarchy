@@ -1,5 +1,8 @@
-# Infracost Template
-# https://www.infracost.io/docs/features/config_file/#template-syntax
+
+# Infracost Configuration
+# https://www.infracost.io/docs/config_file
+
+# This file is manged by the infracost.yml.tmpl file, do not edit infracost.yml directly.
 
 version: 0.1
 projects:
