@@ -679,7 +679,25 @@ identity_groups = {
 }
 
 organization_custom_iam_roles = {
-  host-gke-firewall-management = {
+  dns-records-admin = {
+    description = "Allows for the management of DNS records"
+    permissions = [
+      "dns.changes.create",
+      "dns.changes.get",
+      "dns.resourceRecordSets.create",
+      "dns.resourceRecordSets.delete",
+      "dns.resourceRecordSets.get",
+      "dns.resourceRecordSets.list",
+      "dns.resourceRecordSets.update"
+    ]
+
+    # Align with Google's role naming convention
+
+    role_id = "dns.recordsAdmin"
+    title   = "DNS Records Admin"
+  }
+
+  k8s-host-firewall-management = {
     description = "Allows for a GKE cluster in a service project to create and manage the firewall resources in your host project"
     permissions = [
       "compute.firewalls.create",
@@ -693,6 +711,6 @@ organization_custom_iam_roles = {
     # Align with Google's role naming convention
 
     role_id = "kubernetes.hostFirewallManagement"
-    title   = "Host Kubernetes Firewall Management"
+    title   = "Kubernetes Host Firewall Management"
   }
 }

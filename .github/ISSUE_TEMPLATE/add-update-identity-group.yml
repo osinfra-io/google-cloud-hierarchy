@@ -1,9 +1,21 @@
 name: Add or update identity group
 description: Service interface for adding or updating a identity group in the Open Source Infrastructure (as Code) organization.
 title: Add or update identity group
-labels: ["enhancement"]
+labels:
+   - "enhancement"
+   - "good-first-issue"
 
 body:
+  - type: textarea
+    id: markdown-text
+    attributes:
+      label: "Developer notes:"
+      value: |
+        <!-- Do not edit this section. It is intended to provide the developer working on this issue with additional context and instructions. -->
+        [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/osinfra-io/github-terraform-codespace)
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |
