@@ -1,7 +1,7 @@
-name: Add or update folder
-description: Service interface for adding or updating Google folders.
-title: Add or update folder
-labels:
+name: Add or update custom IAM role
+description: Service interface for adding or updating custom IAM roles.
+title: Add or update custom IAM role
+labels: 
    - "enhancement"
    - "good-first-issue"
 
@@ -19,7 +19,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the following details to request a folder in the Google Cloud Platform resource hierarchy.
+        Please fill out the following details to request a custom IAM role.
 
   - type: input
     id: email-address
@@ -31,13 +31,38 @@ body:
       required: true
 
   - type: input
-    id: google-folder-path
+    id: role-id
     attributes:
-      label: "Google folder path:"
-      description: The path of the Google folder to create or update.
-      placeholder: Platform - Google Cloud Kubernetes Engine/Autopilot
+      label: "Role ID:"
+      description: The name of the role you'd like to add or update.
+      placeholder: "my.customRole"
     validations:
       required: true
+  
+  - type: input
+    id: role-title
+    attributes:
+      label: "Role title:"
+      description: A short title for the role.
+      placeholder: "My Custom Role"
+    validations:
+      required: true
+
+  - type: input
+    id: role-description
+    attributes:
+      label: "Role description:"
+      description: A short description of the role.
+      placeholder: "This role is used to..."
+    validations:
+      required: true
+
+  - type: input
+    id: role-permissions
+    attributes:
+      label: "Role permissions:"
+      description: A list of permissions that should be granted to the role.
+      placeholder: "compute.firewalls.create, compute.firewalls.delete"
 
   - type: textarea
     id: comments
