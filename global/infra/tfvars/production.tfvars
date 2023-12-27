@@ -64,6 +64,12 @@ folder_iam_policies = {
         members = [
           "group:terraform-backend-sb@osinfra.io"
         ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
         role = "roles/resourcemanager.folderIamAdmin"
       },
       {
@@ -79,6 +85,12 @@ folder_iam_policies = {
     service     = "Backstage"
     environment = "Production"
     bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
       {
         members = [
           "group:terraform-backend-prod@osinfra.io"
@@ -102,13 +114,13 @@ folder_iam_policies = {
         members = [
           "group:terraform-backend-sb@osinfra.io"
         ]
-        role = "roles/resourcemanager.folderIamAdmin"
+        role = "roles/compute.xpnAdmin"
       },
       {
         members = [
           "group:terraform-backend-sb@osinfra.io"
         ]
-        role = "roles/compute.xpnAdmin"
+        role = "roles/resourcemanager.folderIamAdmin"
       },
       {
         members = [
@@ -127,13 +139,13 @@ folder_iam_policies = {
         members = [
           "group:terraform-backend-nonprod@osinfra.io"
         ]
-        role = "roles/resourcemanager.folderIamAdmin"
+        role = "roles/compute.xpnAdmin"
       },
       {
         members = [
           "group:terraform-backend-nonprod@osinfra.io"
         ]
-        role = "roles/compute.xpnAdmin"
+        role = "roles/resourcemanager.folderIamAdmin"
       },
       {
         members = [
@@ -152,13 +164,13 @@ folder_iam_policies = {
         members = [
           "group:terraform-backend-prod@osinfra.io"
         ]
-        role = "roles/resourcemanager.folderIamAdmin"
+        role = "roles/compute.xpnAdmin"
       },
       {
         members = [
           "group:terraform-backend-prod@osinfra.io"
         ]
-        role = "roles/compute.xpnAdmin"
+        role = "roles/resourcemanager.folderIamAdmin"
       },
       {
         members = [
