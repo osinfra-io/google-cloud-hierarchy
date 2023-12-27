@@ -1,7 +1,7 @@
 name: Add or update custom IAM role
 description: Service interface for adding or updating custom IAM roles.
 title: Add or update custom IAM role
-labels: 
+labels:
    - "enhancement"
    - "good-first-issue"
 
@@ -38,7 +38,7 @@ body:
       placeholder: "my.customRole"
     validations:
       required: true
-  
+
   - type: input
     id: role-title
     attributes:
