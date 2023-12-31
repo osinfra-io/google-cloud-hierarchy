@@ -10,10 +10,10 @@ variable "billing_account" {
 # The google_cloud_identity_group resource requires this if you are using User ADCs (Application Default Credentials).
 # This is only needed during bootstrapping.
 
-variable "billing_project" {
-  description = "The quota project to send in `user_project_override`, used for all requests sent from the provider. If set on a resource that supports sending the resource project, this value will supersede the resource project. This field is ignored if `user_project_override` is set to false or unset"
-  type        = string
-}
+# variable "billing_project" {
+#   description = "The quota project to send in `user_project_override`, used for all requests sent from the provider. If set on a resource that supports sending the resource project, this value will supersede the resource project. This field is ignored if `user_project_override` is set to false or unset"
+#   type        = string
+# }
 
 variable "customer_id" {
   description = "The unique customer ID assigned to you when you signed up for Google Workspace or Cloud Identity. You can look up this ID in your Admin console"
