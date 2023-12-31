@@ -691,6 +691,20 @@ identity_groups = {
 }
 
 organization_custom_iam_roles = {
+  container-deployer = {
+    description = "Access to deploy Kubernetes resources"
+    permissions = [
+      "container.clusters.get",
+      "container.clusters.list",
+      "container.customResourceDefinitions.list",
+      "resourcemanager.projects.get",
+      "resourcemanager.projects.list"
+    ]
+
+    role_id = "container.deployer"
+    title   = "Kubernetes Engine Deployer"
+  }
+
   dns-records-admin = {
     description = "Allows for the management of DNS records"
     permissions = [
