@@ -511,7 +511,7 @@ identity_groups = {
     owners = [
       "brett@osinfra.io",
 
-      # These service accounts create the IAP brands in the sandbox and production environments
+      # This service account creates the IAP brand in the production environment.
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
       "plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
@@ -527,7 +527,7 @@ identity_groups = {
     owners = [
       "brett@osinfra.io",
 
-      # These service accounts create the IAP brands in the sandbox and production environments
+      # This service account creates the IAP brand in the sandbox environment.
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
       "plt-backstage-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
@@ -566,6 +566,19 @@ identity_groups = {
     managers     = []
     members      = []
     owners       = ["brett@osinfra.io"]
+    roles        = []
+  }
+
+  # This Google Group is required to enable Kubernetes role-based access control (RBAC)
+  # in your Google Kubernetes Engine (GKE) clusters. Add your groups as nested groups to this group.
+  # Don't add individual users as members of gke-security-groups.
+
+  gke-security-groups = {
+    description  = "Security group for Kubernetes role-based access control (RBAC)"
+    display_name = "Kubernetes Security Groups"
+    managers     = []
+    members      = ["gke-testing-security-group@osinfra.io"]
+    owners       = []
     roles        = []
   }
 
@@ -678,6 +691,17 @@ identity_groups = {
 
     owners = ["brett@osinfra.io"]
     roles  = []
+  }
+
+  # This is an example of a nested group. This group is added as a member of the gke-security-groups group.
+
+  gke-testing-security-group = {
+    description  = "GKE security group for the testing environment"
+    display_name = "GKE Testing Security Group"
+    managers     = []
+    members      = []
+    owners       = ["plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"]
+    roles        = []
   }
 
   social = {
