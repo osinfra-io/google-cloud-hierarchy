@@ -511,7 +511,7 @@ identity_groups = {
     owners = [
       "brett@osinfra.io",
 
-      # These service accounts create the IAP brands in the sandbox and production environments
+      # This service account creates the IAP brand in the sandbox environment.
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
       "plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
@@ -527,7 +527,7 @@ identity_groups = {
     owners = [
       "brett@osinfra.io",
 
-      # These service accounts create the IAP brands in the sandbox and production environments
+      # This service account creates the IAP brand in the production environment.
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
       "plt-backstage-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
@@ -567,6 +567,22 @@ identity_groups = {
     members      = []
     owners       = ["brett@osinfra.io"]
     roles        = []
+  }
+
+  # This Google Group is required to enable Kubernetes role-based access control (RBAC)
+  # in your Google Kubernetes Engine (GKE) clusters. Add your groups as nested groups to this group.
+  # Don't add individual users as members of gke-security-groups.
+
+  gke-security-groups = {
+    description  = "Security group for Kubernetes role-based access control (RBAC)"
+    display_name = "Kubernetes Security Groups"
+
+    # The managers of this groupd should be the service accounts that create the GKE clusters and manages onboarding.
+
+    managers = []
+    members  = []
+    owners   = []
+    roles    = []
   }
 
   help = {

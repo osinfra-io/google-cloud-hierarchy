@@ -63,6 +63,15 @@ body:
     validations:
       required: false
 
+  - type: checkboxes
+    id: gke-security-groups
+    attributes:
+      label: "GKE security groups:"
+      description: "Check below if this group is a GKE security groups."
+      options:
+        - label: "Add to GKE security groups"
+          required: false
+
   - type: textarea
     id: comments
     attributes:
