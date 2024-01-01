@@ -511,7 +511,7 @@ identity_groups = {
     owners = [
       "brett@osinfra.io",
 
-      # This service account creates the IAP brand in the sandbox environment.
+      # This service account creates the IAP brand in the production environment.
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
       "plt-backstage-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
@@ -527,7 +527,7 @@ identity_groups = {
     owners = [
       "brett@osinfra.io",
 
-      # This service account creates the IAP brand in the production environment.
+      # This service account creates the IAP brand in the sandbox environment.
       # It required to be an owner of the group for the Terraform resource google_iap_brand to work.
 
       "plt-backstage-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
@@ -576,13 +576,10 @@ identity_groups = {
   gke-security-groups = {
     description  = "Security group for Kubernetes role-based access control (RBAC)"
     display_name = "Kubernetes Security Groups"
-
-    # The managers of this groupd should be the service accounts that create the GKE clusters and manages onboarding.
-
-    managers = []
-    members  = []
-    owners   = []
-    roles    = []
+    managers     = []
+    members      = ["testing-nested-gke-security-group@osinfra.io"]
+    owners       = []
+    roles        = []
   }
 
   help = {
@@ -694,6 +691,15 @@ identity_groups = {
 
     owners = ["brett@osinfra.io"]
     roles  = []
+  }
+
+  testing-nested-gke-security-group = {
+    description  = "Testing nested group for Kubernetes role-based access control (RBAC)"
+    display_name = "Testing Nested Kubernetes Security Groups"
+    managers     = []
+    members      = []
+    owners       = ["plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"]
+    roles        = []
   }
 
   social = {
