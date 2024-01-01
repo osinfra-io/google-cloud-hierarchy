@@ -577,7 +577,7 @@ identity_groups = {
     description  = "Security group for Kubernetes role-based access control (RBAC)"
     display_name = "Kubernetes Security Groups"
     managers     = []
-    members      = ["testing-nested-gke-security-group@osinfra.io"]
+    members      = ["gke-testing-security-group@osinfra.io"]
     owners       = []
     roles        = []
   }
@@ -693,9 +693,11 @@ identity_groups = {
     roles  = []
   }
 
-  testing-nested-gke-security-group = {
-    description  = "Testing nested group for Kubernetes role-based access control (RBAC)"
-    display_name = "Testing Nested Kubernetes Security Groups"
+  # This is an example of a nested group. This group is added as a member of the gke-security-groups group.
+
+  gke-testing-security-group = {
+    description  = "GKE security group for the testing environment"
+    display_name = "GKE Testing Security Group"
     managers     = []
     members      = []
     owners       = ["plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"]
