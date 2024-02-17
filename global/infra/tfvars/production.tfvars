@@ -556,7 +556,8 @@ identity_groups = {
     roles = [
       "roles/billing.costsManager",
       "roles/billing.user",
-      "roles/resourcemanager.organizationViewer"
+      "roles/resourcemanager.organizationViewer",
+      "roles/serviceusage.serviceUsageConsumer"
     ]
   }
 
