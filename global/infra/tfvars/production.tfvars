@@ -731,7 +731,7 @@ identity_groups = {
       "plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+      "plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
