@@ -500,6 +500,12 @@ folder_services = {
     environments = ["Sandbox", "Production"]
     parent       = "team-1"
   }
+
+  service-9 = {
+    display_name = "Services"
+    environments = ["Sandbox", "Non-Production", "Production"]
+    parent       = "team-1"
+  }
 }
 
 identity_groups = {
@@ -645,7 +651,8 @@ identity_groups = {
       "plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+      "plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-lz-services@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -666,7 +673,8 @@ identity_groups = {
       "plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+      "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-services@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -687,7 +695,8 @@ identity_groups = {
       "plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+      "plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
+      "plt-lz-services@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
