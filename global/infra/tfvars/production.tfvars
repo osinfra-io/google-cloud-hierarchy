@@ -256,6 +256,63 @@ folder_iam_policies = {
     ]
   }
 
+  44679921766 = {
+    service     = "Services"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  306437988454 = {
+    service     = "Services"
+    environment = "Non-Production"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-nonprod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  638543714452 = {
+    service     = "Services"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
   515753002772 = {
     service     = "Terraform Backend"
     environment = "Sandbox"
@@ -652,7 +709,7 @@ identity_groups = {
       "plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-services@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+      "plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -674,7 +731,7 @@ identity_groups = {
       "plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-services@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+      "plt-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -696,7 +753,7 @@ identity_groups = {
       "plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
       "plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-services@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+      "plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
