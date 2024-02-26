@@ -686,6 +686,24 @@ identity_groups = {
     roles        = []
   }
 
+  platform-registry-readers = {
+    description  = "Group for reading from the platform artifact registry repository"
+    display_name = "Platform Registry Readers"
+    managers     = []
+    members      = []
+    owners       = ["brett@osinfra.io"]
+    roles        = []
+  }
+
+  platform-registry-writers = {
+    description  = "Group for writing to the platform artifact registry repository"
+    display_name = "Platform Registry Writers"
+    managers     = []
+    members      = []
+    owners       = ["brett@osinfra.io"]
+    roles        = []
+  }
+
   security = {
     description  = "Email enabled group for the security enabling team"
     display_name = "Security"
