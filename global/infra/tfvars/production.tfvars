@@ -801,7 +801,7 @@ identity_groups = {
 
 organization_custom_iam_roles = {
   container-deployer = {
-    description = "Access to deploy Kubernetes resources"
+    description = "Access to deploy to Kubernetes Engine"
     permissions = [
       "container.clusters.get",
       "container.clusters.list",
@@ -813,9 +813,21 @@ organization_custom_iam_roles = {
     role_id = "container.deployer"
     title   = "Kubernetes Engine Deployer"
   }
+  
+  datadog_clould_cost_management = {
+    description = "Access to BigQuery jobs for Datadog Cloud Cost Management"
+    permissions = [
+      "bigquery.jobs.create",
+      "bigquery.jobs.get",
+      "bigquery.jobs.update"
+    ]
+
+    role_id = "datadog.cloudCostManagement"
+    title   = "Datadog Cloud Cost Management"
+  }
 
   dns-records-admin = {
-    description = "Allows for the management of DNS records"
+    description = "Access to manage DNS records in Cloud DNS"
     permissions = [
       "dns.changes.create",
       "dns.changes.get",
@@ -826,14 +838,12 @@ organization_custom_iam_roles = {
       "dns.resourceRecordSets.update"
     ]
 
-    # Align with Google's role naming convention
-
     role_id = "dns.recordsAdmin"
     title   = "DNS Records Admin"
   }
 
   k8s-host-firewall-management = {
-    description = "Allows for a GKE cluster in a service project to create and manage the firewall resources in your host project"
+    description = "Access for a GKE cluster in a service project to create and manage the firewall resources in a host project"
     permissions = [
       "compute.firewalls.create",
       "compute.firewalls.delete",
@@ -842,8 +852,6 @@ organization_custom_iam_roles = {
       "compute.firewalls.update",
       "compute.networks.updatePolicy"
     ]
-
-    # Align with Google's role naming convention
 
     role_id = "kubernetes.hostFirewallManagement"
     title   = "Kubernetes Host Firewall Management"
