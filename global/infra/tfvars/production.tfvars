@@ -814,7 +814,7 @@ organization_custom_iam_roles = {
     title   = "Kubernetes Engine Deployer"
   }
   
-  datadog_clould_cost_management = {
+  datadog_cloud_cost_management = {
     description = "Access to BigQuery jobs for Datadog Cloud Cost Management"
     permissions = [
       "bigquery.jobs.create",
