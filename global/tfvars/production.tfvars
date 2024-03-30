@@ -691,14 +691,14 @@ identity_groups = {
     display_name = "Platform Registry Readers"
     managers     = []
 
-    members      = [
+    members = [
       # Repository: google-kubernetes-engine
       "gke-tf7f11@plt-k8s-tfb4-sb.iam.gserviceaccount.com",
       "gke-tfa6da@plt-k8s-tfb4-sb.iam.gserviceaccount.com"
-      ]
+    ]
 
-    owners       = ["brett@osinfra.io"]
-    roles        = []
+    owners = ["brett@osinfra.io"]
+    roles  = []
   }
 
   platform-registry-writers = {
