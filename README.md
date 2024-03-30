@@ -8,6 +8,8 @@
 
 [![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/57318eb1-8a72-432f-8305-4ac7b10c9495/branch/0049fa37-5530-460c-9f8a-ab4824107d09)](https://dashboard.infracost.io/org/osinfra-io/repos/57318eb1-8a72-432f-8305-4ac7b10c9495?tab=settings)
 
+💵 Monthly estimates based on Infracost baseline costs.
+
 ## Repository Description
 
 This repository creates a resource hierarchy and manages IAM. It aligns with our [Google Cloud landing zone platform](https://docs.osinfra.io/google-cloud-platform/landing-zone) design. A landing zone should be a prerequisite to deploying enterprise workloads in a cloud environment.
