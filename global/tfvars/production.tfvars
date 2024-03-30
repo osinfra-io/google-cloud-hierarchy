@@ -693,8 +693,6 @@ identity_groups = {
 
     members = [
       # Repository: google-kubernetes-engine
-      "gke-tf7f11@plt-k8s-tfb4-sb.iam.gserviceaccount.com",
-      "gke-tfa6da@plt-k8s-tfb4-sb.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
