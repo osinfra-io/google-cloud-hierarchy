@@ -1,4 +1,4 @@
-# Terraform Global Infrastructure Documentation
+# Terraform Documentation
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
