@@ -807,6 +807,7 @@ organization_custom_iam_roles = {
   container-deployer = {
     description = "Access to deploy to Kubernetes Engine"
     permissions = [
+      "compute.instanceGroupManagers.get",
       "container.clusters.get",
       "container.clusters.list",
       "container.customResourceDefinitions.list",
