@@ -1,0 +1,9 @@
+# Terraform Docs
+# https://github.com/terraform-docs/terraform-docs
+
+sections:
+  hide:
+    - requirements
+
+settings:
+  indent: 4
