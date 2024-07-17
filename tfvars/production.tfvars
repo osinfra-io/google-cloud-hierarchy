@@ -547,9 +547,10 @@ folder_services = {
   }
 
   service-7 = {
-    display_name = "Kubernetes"
-    environments = ["Sandbox", "Non-Production", "Production"]
-    parent       = "team-1"
+    display_name          = "Kubernetes"
+    environments          = ["Sandbox", "Non-Production", "Production"]
+    monthly_budget_amount = 50
+    parent                = "team-1"
   }
 
   service-8 = {
@@ -561,6 +562,7 @@ folder_services = {
   service-9 = {
     display_name = "Services"
     environments = ["Sandbox", "Non-Production", "Production"]
+    monthly_budget_amount = 25
     parent       = "team-1"
   }
 }

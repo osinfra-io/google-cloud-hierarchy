@@ -75,7 +75,7 @@ variable "organization_custom_iam_roles" {
 variable "organization_monthly_budget_amount" {
   description = "The organization monthly budget amount in USD"
   type        = number
-  default     = 50
+  default     = 100
 }
 
 variable "organization_id" {
