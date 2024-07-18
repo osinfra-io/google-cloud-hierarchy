@@ -560,10 +560,10 @@ folder_services = {
   }
 
   service-9 = {
-    display_name = "Services"
-    environments = ["Sandbox", "Non-Production", "Production"]
+    display_name          = "Services"
+    environments          = ["Sandbox", "Non-Production", "Production"]
     monthly_budget_amount = 25
-    parent       = "team-1"
+    parent                = "team-1"
   }
 }
 

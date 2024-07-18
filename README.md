@@ -52,7 +52,7 @@ Links to documentation and other resources required to develop and iterate in th
 
 | Name | Version |
 |------|---------|
-| google | 5.37.0 |
+| google | 5.38.0 |
 
 #### Resources
 
@@ -84,6 +84,6 @@ Links to documentation and other resources required to develop and iterate in th
 | identity\_groups | A map of identity groups to create | ```map(object({ description = string display_name = string managers = list(string) members = list(string) owners = list(string) roles = list(string) }))``` | n/a | yes |
 | organization\_custom\_iam\_roles | A map of organization custom IAM roles to create | ```map(object({ description = optional(string, null) permissions = list(string) role_id = string title = string }))``` | n/a | yes |
 | organization\_id | The organization ID to create the hierarchy under | `string` | n/a | yes |
-| organization\_monthly\_budget\_amount | The organization monthly budget amount in USD | `number` | `50` | no |
+| organization\_monthly\_budget\_amount | The organization monthly budget amount in USD | `number` | `100` | no |
 | primary\_domain | The main domain associated with your Google Workspace account. By default, your users get a username at this domain | `string` | `"osinfra.io"` | no |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
