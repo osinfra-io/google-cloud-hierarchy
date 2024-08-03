@@ -52,7 +52,7 @@ Links to documentation and other resources required to develop and iterate in th
 
 | Name | Version |
 |------|---------|
-| google | 5.38.0 |
+| google | 5.39.1 |
 
 #### Resources
 
