@@ -591,16 +591,7 @@ identity_groups = {
     ]
   }
 
-  platform-contributors = {
-    description  = "Platform contributors are able to contribute to the platform"
-    display_name = "Platform Contributors"
-    managers     = []
-    members      = []
-    owners       = ["brett@osinfra.io"]
-    roles        = []
-  }
-
-  platform-registry-readers = {
+  plt-registry-readers = {
     description  = "Group for reading from the platform artifact registry repository"
     display_name = "Platform Registry Readers"
 
@@ -615,7 +606,7 @@ identity_groups = {
     roles   = []
   }
 
-  platform-registry-writers = {
+  plt-registry-writers = {
     description  = "Group for writing to the platform artifact registry repository"
     display_name = "Platform Registry Writers"
     managers     = []
