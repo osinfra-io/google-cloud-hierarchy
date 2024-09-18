@@ -603,14 +603,16 @@ identity_groups = {
   platform-registry-readers = {
     description  = "Group for reading from the platform artifact registry repository"
     display_name = "Platform Registry Readers"
-    managers     = []
 
-    members = [
-      # Repository: google-kubernetes-engine
+    managers = [
+      "plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
+      "plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
+      "plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
     ]
 
-    owners = ["brett@osinfra.io"]
-    roles  = []
+    members = []
+    owners  = ["brett@osinfra.io"]
+    roles   = []
   }
 
   platform-registry-writers = {
