@@ -47,12 +47,12 @@ Links to documentation and other resources required to develop and iterate in th
 
 ### 📓 Terraform Documentation
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 #### Providers
 
 | Name | Version |
 |------|---------|
-| google | 5.39.1 |
+| google | 6.3.0 |
 
 #### Resources
 
@@ -86,4 +86,4 @@ Links to documentation and other resources required to develop and iterate in th
 | organization\_id | The organization ID to create the hierarchy under | `string` | n/a | yes |
 | organization\_monthly\_budget\_amount | The organization monthly budget amount in USD | `number` | `100` | no |
 | primary\_domain | The main domain associated with your Google Workspace account. By default, your users get a username at this domain | `string` | `"osinfra.io"` | no |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
