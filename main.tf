@@ -232,6 +232,10 @@ resource "google_folder_iam_policy" "this" {
 
   folder      = each.key
   policy_data = data.google_iam_policy.this[each.key].policy_data
+
+  depends_on = [
+
+  ]
 }
 
 # Organization IAM Custom Role Resource

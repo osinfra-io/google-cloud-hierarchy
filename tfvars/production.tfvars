@@ -339,16 +339,9 @@ folder_iam_policies = {
       },
       {
         members = [
-          "group:platform-contributors@osinfra.io",
           "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
-      },
-      {
-        members = [
-          "group:platform-contributors@osinfra.io"
-        ]
-        role = "roles/owner"
       }
     ]
   }
@@ -528,7 +521,7 @@ identity_groups = {
     description  = "Billing users are able to attach billing accounts to projects"
     display_name = "Billing Users"
     managers     = []
-    members      = ["platform-contributors@osinfra.io"]
+    members      = []
     owners       = ["brett@osinfra.io"]
     roles = [
       "roles/billing.costsManager",
