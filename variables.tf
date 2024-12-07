@@ -18,7 +18,7 @@ variable "billing_account" {
 variable "customer_id" {
   description = "The unique customer ID assigned to you when you signed up for Google Workspace or Cloud Identity. You can look up this ID in your Admin console"
   type        = string
-  sensitive   = true
+  default     = "C01hd34v8"
 }
 
 variable "folder_iam_policies" {
@@ -81,7 +81,7 @@ variable "organization_monthly_budget_amount" {
 variable "organization_id" {
   description = "The organization ID to create the hierarchy under"
   type        = string
-  sensitive   = true
+  default     = "163313809793"
 }
 
 variable "primary_domain" {

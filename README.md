@@ -52,7 +52,7 @@ Links to documentation and other resources required to develop and iterate in th
 
 | Name | Version |
 |------|---------|
-| google | 6.3.0 |
+| google | 6.12.0 |
 
 #### Resources
 
@@ -77,13 +77,13 @@ Links to documentation and other resources required to develop and iterate in th
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | billing\_account | The alphanumeric ID of the billing account this project belongs to | `string` | `"01C550-A2C86B-B8F16B"` | no |
-| customer\_id | The unique customer ID assigned to you when you signed up for Google Workspace or Cloud Identity. You can look up this ID in your Admin console | `string` | n/a | yes |
+| customer\_id | The unique customer ID assigned to you when you signed up for Google Workspace or Cloud Identity. You can look up this ID in your Admin console | `string` | `"C01hd34v8"` | no |
 | folder\_iam\_policies | A map of authoritative IAM policies for the folder, replaces any existing policy already attached | ```map(object({ service = string environment = string bindings = list(object({ members = list(string) role = string })) }))``` | n/a | yes |
 | folder\_services | A map of folder services to create | ```map(object({ display_name = string environments = list(string) monthly_budget_amount = optional(number, 10) parent = string }))``` | n/a | yes |
 | folder\_teams | A map of folder teams to create | ```map(object({ display_name = string }))``` | n/a | yes |
 | identity\_groups | A map of identity groups to create | ```map(object({ description = string display_name = string managers = list(string) members = list(string) owners = list(string) roles = list(string) }))``` | n/a | yes |
 | organization\_custom\_iam\_roles | A map of organization custom IAM roles to create | ```map(object({ description = optional(string, null) permissions = list(string) role_id = string title = string }))``` | n/a | yes |
-| organization\_id | The organization ID to create the hierarchy under | `string` | n/a | yes |
+| organization\_id | The organization ID to create the hierarchy under | `string` | `"163313809793"` | no |
 | organization\_monthly\_budget\_amount | The organization monthly budget amount in USD | `number` | `100` | no |
 | primary\_domain | The main domain associated with your Google Workspace account. By default, your users get a username at this domain | `string` | `"osinfra.io"` | no |
 <!-- END_TF_DOCS -->
