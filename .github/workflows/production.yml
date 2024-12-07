@@ -32,6 +32,3 @@ jobs:
     secrets:
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       infracost_api_key: ${{ secrets.INFRACOST_API_KEY }}
-      terraform_plan_secret_args: >-
-        -var=customer_id=${{ secrets.CUSTOMER_ID }}
-        -var=organization_id=${{ secrets.ORGANIZATION_ID }}
