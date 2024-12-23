@@ -23,6 +23,9 @@ jobs:
       checkout_ref: ${{ github.ref }}
       environment: production
       github_environment: "Production: Main"
+
+      # This service account needs to be added to the Groups Admin system role in the the Google Workspace Admin Console
+
       service_account: plt-lz-hierarchy-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com
       terraform_plan_args: -var-file=tfvars/production.tfvars
       terraform_state_bucket: plt-lz-hierarchy-53a5-prod
