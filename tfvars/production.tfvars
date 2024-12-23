@@ -11,7 +11,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-audit-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -30,7 +30,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-audit-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -49,7 +49,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-audit-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-audit-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -74,7 +74,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-k8s-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -99,7 +99,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-k8s-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -124,7 +124,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-k8s-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -143,13 +143,13 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/compute.xpnAdmin"
       },
       {
         members = [
-          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -168,13 +168,13 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/compute.xpnAdmin"
       },
       {
         members = [
-          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -193,13 +193,13 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/compute.xpnAdmin"
       },
       {
         members = [
-          "serviceAccount:plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-networking-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -218,7 +218,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-services-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -237,7 +237,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-services-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -256,7 +256,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-services-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -275,7 +275,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-backend-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -295,7 +295,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-backend-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -314,7 +314,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-backend-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -333,13 +333,13 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-testing-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/compute.xpnAdmin"
       },
       {
         members = [
-          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-testing-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -358,7 +358,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-testing-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -377,7 +377,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-testing-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -396,7 +396,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-identity-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -415,7 +415,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-identity-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -434,7 +434,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+          "serviceAccount:plt-lz-identity-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
@@ -589,9 +589,9 @@ identity_groups = {
     display_name = "Platform Registry Readers"
 
     managers = [
-      "plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+      "plt-k8s-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-k8s-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-k8s-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
     ]
 
     members = []
@@ -623,15 +623,15 @@ identity_groups = {
     managers     = []
 
     members = [
-      "plt-gh-organization-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-audit-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-backend-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-hierarchy-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-identity-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-k8s-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-networking-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-testing-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com",
-      "plt-lz-services-github@ptl-lz-terraform-tf05-nonprod.iam.gserviceaccount.com"
+      "plt-gh-organization-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-audit-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-backend-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-hierarchy-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-identity-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-k8s-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-networking-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-testing-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com",
+      "plt-lz-services-github@plt-lz-terraform-tfe2-nonprod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -644,15 +644,15 @@ identity_groups = {
     managers     = []
 
     members = [
-      "plt-gh-organization-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-audit-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-backend-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-hierarchy-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-identity-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-k8s-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-networking-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-testing-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com",
-      "plt-lz-services-github@ptl-lz-terraform-tf62-prod.iam.gserviceaccount.com"
+      "plt-gh-organization-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-audit-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-backend-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-hierarchy-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-identity-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-k8s-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-networking-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-testing-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com",
+      "plt-lz-services-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -665,15 +665,15 @@ identity_groups = {
     managers     = []
 
     members = [
-      "plt-gh-organization-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-audit-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-backend-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-hierarchy-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-identity-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-k8s-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-networking-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com",
-      "plt-lz-services-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"
+      "plt-gh-organization-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-audit-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-backend-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-hierarchy-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-identity-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-k8s-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-networking-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-testing-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-lz-services-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
     ]
 
     owners = ["brett@osinfra.io"]
@@ -687,7 +687,7 @@ identity_groups = {
     display_name = "GKE Testing Security Group"
     managers     = []
     members      = []
-    owners       = ["plt-lz-testing-github@ptl-lz-terraform-tf91-sb.iam.gserviceaccount.com"]
+    owners       = ["plt-lz-testing-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"]
     roles        = []
   }
 
