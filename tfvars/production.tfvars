@@ -74,7 +74,7 @@ folder_iam_policies = {
       },
       {
         members = [
-          "serviceAccount:plt-lz-backend-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+          "serviceAccount:plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
         ]
         role = "roles/resourcemanager.projectCreator"
       }
