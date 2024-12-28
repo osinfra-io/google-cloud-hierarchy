@@ -56,6 +56,56 @@ folder_iam_policies = {
     ]
   }
 
+  779017192334 = {
+    service     = "Backstage"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-lz-backend-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  336085891445 = {
+    service     = "Backstage"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      # {
+      #   members = [
+      #     "serviceAccount:plt-backstage-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
+      #   ]
+      #   role = "roles/resourcemanager.projectCreator"
+      # }
+    ]
+  }
+
   589091281803 = {
     service     = "Kubernetes"
     environment = "Sandbox"
@@ -500,6 +550,13 @@ folder_services = {
     display_name          = "Services"
     environments          = ["Sandbox", "Non-Production", "Production"]
     monthly_budget_amount = 25
+    parent                = "team-1"
+  }
+
+  service-10 = {
+    display_name          = "Backstage"
+    environments          = ["Sandbox", "Production"]
+    monthly_budget_amount = 10
     parent                = "team-1"
   }
 }

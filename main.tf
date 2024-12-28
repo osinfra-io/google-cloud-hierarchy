@@ -25,10 +25,10 @@ terraform {
 
 # This is only needed during bootstrapping.
 
-# provider "google" {
-#   billing_project       = var.billing_project
-#   user_project_override = true
-# }
+provider "google" {
+  billing_project       = var.billing_project
+  user_project_override = true
+}
 
 # IAM Policy Data Source
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy
