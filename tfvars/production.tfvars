@@ -660,9 +660,12 @@ identity_groups = {
     description  = "Group for writing to the platform artifact registry repository"
     display_name = "Platform Registry Writers"
     managers     = []
-    members      = []
-    owners       = ["brett@osinfra.io"]
-    roles        = []
+    members = [
+      "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-gke-info-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+    ]
+    owners = ["brett@osinfra.io"]
+    roles  = []
   }
 
   security = {
