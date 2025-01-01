@@ -588,6 +588,20 @@ identity_groups = {
     ]
   }
 
+  iap = {
+    description  = "Email enabled group for Identity-Aware Proxy (IAP)"
+    display_name = "Identity-Aware Proxy"
+    managers     = []
+    members      = []
+    owners = [
+      "brett@osinfra.io",
+      "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+    ]
+    roles = [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  }
+
   github-sa = {
     description  = "Email enabled group for the GitHub Service Account"
     display_name = "GitHub Service Account"
@@ -725,6 +739,7 @@ identity_groups = {
     managers     = []
 
     members = [
+      "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
       "plt-gh-organization-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
       "plt-lz-audit-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
       "plt-lz-backend-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
