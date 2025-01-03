@@ -56,6 +56,56 @@ folder_iam_policies = {
     ]
   }
 
+  779017192334 = {
+    service     = "Backstage"
+    environment = "Sandbox"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "group:terraform-backend-sb@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      {
+        members = [
+          "serviceAccount:plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+        ]
+        role = "roles/resourcemanager.projectCreator"
+      }
+    ]
+  }
+
+  336085891445 = {
+    service     = "Backstage"
+    environment = "Production"
+    bindings = [
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/compute.xpnAdmin"
+      },
+      {
+        members = [
+          "group:terraform-backend-prod@osinfra.io"
+        ]
+        role = "roles/resourcemanager.folderIamAdmin"
+      },
+      # {
+      #   members = [
+      #     "serviceAccount:plt-backstage-github@plt-lz-terraform-tf56-prod.iam.gserviceaccount.com"
+      #   ]
+      #   role = "roles/resourcemanager.projectCreator"
+      # }
+    ]
+  }
+
   589091281803 = {
     service     = "Kubernetes"
     environment = "Sandbox"
@@ -502,6 +552,13 @@ folder_services = {
     monthly_budget_amount = 25
     parent                = "team-1"
   }
+
+  service-10 = {
+    display_name          = "Backstage"
+    environments          = ["Sandbox", "Production"]
+    monthly_budget_amount = 10
+    parent                = "team-1"
+  }
 }
 
 identity_groups = {
@@ -528,6 +585,20 @@ identity_groups = {
       "roles/billing.user",
       "roles/resourcemanager.organizationViewer",
       "roles/serviceusage.serviceUsageConsumer"
+    ]
+  }
+
+  iap = {
+    description  = "Email enabled group for Identity-Aware Proxy (IAP)"
+    display_name = "Identity-Aware Proxy"
+    managers     = []
+    members      = []
+    owners = [
+      "brett@osinfra.io",
+      "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+    ]
+    roles = [
+      "roles/iap.httpsResourceAccessor"
     ]
   }
 
@@ -603,9 +674,12 @@ identity_groups = {
     description  = "Group for writing to the platform artifact registry repository"
     display_name = "Platform Registry Writers"
     managers     = []
-    members      = []
-    owners       = ["brett@osinfra.io"]
-    roles        = []
+    members = [
+      "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
+      "plt-gke-info-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+    ]
+    owners = ["brett@osinfra.io"]
+    roles  = []
   }
 
   security = {
@@ -665,6 +739,7 @@ identity_groups = {
     managers     = []
 
     members = [
+      "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
       "plt-gh-organization-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
       "plt-lz-audit-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
       "plt-lz-backend-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
