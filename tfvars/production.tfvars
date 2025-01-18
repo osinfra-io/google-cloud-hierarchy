@@ -676,7 +676,7 @@ identity_groups = {
     managers     = []
     members = [
       "plt-backstage-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com",
-      "plt-gke-info-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
+      "plt-istio-test-github@plt-lz-terraform-tf00-sb.iam.gserviceaccount.com"
     ]
     owners = ["brett@osinfra.io"]
     roles  = []
