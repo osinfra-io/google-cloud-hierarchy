@@ -314,7 +314,7 @@ folder_iam_policies = {
   }
 
   515753002772 = {
-    service     = "Terraform Backend"
+    service     = "OpenTofu Backend"
     environment = "Sandbox"
     bindings = [
       {
@@ -334,7 +334,7 @@ folder_iam_policies = {
   }
 
   574432336767 = {
-    service     = "Terraform Backend"
+    service     = "OpenTofu Backend"
     environment = "Non-Production"
     bindings = [
       {
@@ -353,7 +353,7 @@ folder_iam_policies = {
   }
 
   131486843041 = {
-    service     = "Terraform Backend"
+    service     = "OpenTofu Backend"
     environment = "Production"
     bindings = [
       {
@@ -510,7 +510,7 @@ folder_services = {
   }
 
   service-2 = {
-    display_name = "Terraform Backend"
+    display_name = "OpenTofu Backend"
     environments = ["Sandbox", "Non-Production", "Production"]
     parent       = "team-1"
   }
@@ -692,8 +692,8 @@ identity_groups = {
   }
 
   terraform-backend-nonprod = {
-    description  = "Group for the Terraform backend in the Non-Production environment"
-    display_name = "Terraform Backend Non-Production"
+    description  = "Group for the OpenTofu backend in the Non-Production environment"
+    display_name = "OpenTofu Backend Non-Production"
     managers     = []
 
     members = [
@@ -713,8 +713,8 @@ identity_groups = {
   }
 
   terraform-backend-prod = {
-    description  = "Group for the Terraform backend in the Production environment"
-    display_name = "Terraform Backend Production"
+    description  = "Group for the OpenTofu backend in the Production environment"
+    display_name = "OpenTofu Backend Production"
     managers     = []
 
     members = [
@@ -734,8 +734,8 @@ identity_groups = {
   }
 
   terraform-backend-sb = {
-    description  = "Group for the Terraform backend in the Sandbox environment"
-    display_name = "Terraform Backend Sandbox"
+    description  = "Group for the OpenTofu backend in the Sandbox environment"
+    display_name = "OpenTofu Backend Sandbox"
     managers     = []
 
     members = [
