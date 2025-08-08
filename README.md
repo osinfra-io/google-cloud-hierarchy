@@ -25,7 +25,7 @@ Our focus is on the core fundamental practice of platform engineering, Infrastru
 
 >Open Source Infrastructure (as Code) is a development model for infrastructure that focuses on open collaboration and applying relative lessons learned from software development practices that organizations can use internally at scale. - [Open Source Infrastructure (as Code)](https://www.osinfra.io)
 
-To avoid slowing down stream-aligned teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository, describing the tools used, the skills, and the knowledge required, along with Terraform documentation.
+To avoid slowing down stream-aligned teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository, describing the tools used, the skills, and the knowledge required, along with OpenTofu documentation.
 
 See the documentation for setting up a development environment [here](https://docs.osinfra.io/fundamentals/development-setup).
 
@@ -45,7 +45,7 @@ Links to documentation and other resources required to develop and iterate in th
 - [groups](https://cloud.google.com/identity/docs/groups)
 - [iam](https://cloud.google.com/iam/docs/overview)
 
-### 📓 Terraform Documentation
+### 📓 OpenTofu Documentation
 
 <!-- BEGIN_TF_DOCS -->
 #### Providers
@@ -58,19 +58,19 @@ Links to documentation and other resources required to develop and iterate in th
 
 | Name | Type |
 |------|------|
-| [google_billing_budget.organization](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/billing_budget) | resource |
-| [google_billing_budget.services](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/billing_budget) | resource |
-| [google_cloud_identity_group.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group) | resource |
-| [google_cloud_identity_group_membership.managers](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership) | resource |
-| [google_cloud_identity_group_membership.members](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership) | resource |
-| [google_cloud_identity_group_membership.owners](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership) | resource |
-| [google_folder.environment](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
-| [google_folder.service](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
-| [google_folder.team](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder) | resource |
-| [google_folder_iam_policy.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/folder_iam_policy) | resource |
-| [google_organization_iam_custom_role.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/organization_iam_custom_role) | resource |
-| [google_organization_iam_member.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/organization_iam_member) | resource |
-| [google_iam_policy.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy) | data source |
+| [google_billing_budget.organization](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/billing_budget) | resource |
+| [google_billing_budget.services](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/billing_budget) | resource |
+| [google_cloud_identity_group.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/cloud_identity_group) | resource |
+| [google_cloud_identity_group_membership.managers](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/cloud_identity_group_membership) | resource |
+| [google_cloud_identity_group_membership.members](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/cloud_identity_group_membership) | resource |
+| [google_cloud_identity_group_membership.owners](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/cloud_identity_group_membership) | resource |
+| [google_folder.environment](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.service](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder.team](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/folder) | resource |
+| [google_folder_iam_policy.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/folder_iam_policy) | resource |
+| [google_organization_iam_custom_role.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/organization_iam_custom_role) | resource |
+| [google_organization_iam_member.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/organization_iam_member) | resource |
+| [google_iam_policy.this](https://search.opentofu.org/provider/hashicorp/google/latest/docs/data-sources/iam_policy) | data source |
 
 #### Inputs
 

@@ -1,10 +1,10 @@
 # Local Values
-# https://www.terraform.io/language/values/locals
+# https://opentofu.org/docs/language/values/locals
 
 locals {
 
   # Flatten Function
-  # https://developer.hashicorp.com/terraform/language/functions/flatten
+  # https://opentofu.org/docs/language/functions/flatten
 
   # flatten ensures that this local value is a flat list of objects, rather
   # than a list of lists of objects.
@@ -59,7 +59,7 @@ locals {
         owner = owner
 
         # Split Function
-        # https://developer.hashicorp.com/terraform/language/functions/split
+        # https://opentofu.org/docs/language/functions/split
 
         # This will split the owner string into a list of strings based on the @ symbol.
         # We do this because the owner string is an email address and we want to use the
