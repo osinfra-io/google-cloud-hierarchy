@@ -1,12 +1,12 @@
 terraform {
 
   # Required Providers
-  # https://www.terraform.io/language/providers/requirements#requiring-providers
+  # https://opentofu.org/docs/language/providers/requirements#requiring-providers
 
   required_providers {
 
     # Google Cloud Platform Provider
-    # https://registry.terraform.io/providers/hashicorp/google/latest/docs
+    # https://search.opentofu.org/provider/hashicorp/google/latest/docs
 
     google = {
       source = "hashicorp/google"
@@ -15,13 +15,7 @@ terraform {
 }
 
 # Google Cloud Provider
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs
-
-# The google_cloud_identity_group resource requires this if you are using User ADCs (Application Default Credentials).
-# Your account must have the serviceusage.services.use permission on the billing_project you defined as well.
-# The following APIs must be enabled on the billing_project:
-# - cloudresourcemanager.googleapis.com
-# - cloudidentity.googleapis.com
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs
 
 # This is only needed during bootstrapping.
 
@@ -31,7 +25,7 @@ terraform {
 # }
 
 # IAM Policy Data Source
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/data-sources/iam_policy
 
 data "google_iam_policy" "this" {
   for_each = var.folder_iam_policies
@@ -47,7 +41,7 @@ data "google_iam_policy" "this" {
 }
 
 # Billing Budget Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/billing_budget
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/billing_budget
 
 resource "google_billing_budget" "organization" {
   amount {
@@ -111,7 +105,7 @@ resource "google_billing_budget" "services" {
 }
 
 # Cloud Identity Group Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/cloud_identity_group
 
 resource "google_cloud_identity_group" "this" {
   for_each = var.identity_groups
@@ -139,7 +133,7 @@ resource "google_cloud_identity_group" "this" {
 }
 
 # Identity Group Membership
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_identity_group_membership
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/cloud_identity_group_membership
 
 resource "google_cloud_identity_group_membership" "managers" {
 
@@ -193,7 +187,7 @@ resource "google_cloud_identity_group_membership" "owners" {
 }
 
 # Folder Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/google_folder
 
 # Folder resources optionally provide an additional grouping mechanism and isolation
 # boundaries between projects. They can be seen as sub-organizations within the organization
@@ -225,7 +219,7 @@ resource "google_folder" "environment" {
 }
 
 # Folder IAM Policy Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_folder_iam#google_folder_iam_policy
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/google_folder_iam#google_folder_iam_policy
 
 resource "google_folder_iam_policy" "this" {
   for_each = var.folder_iam_policies
@@ -239,7 +233,7 @@ resource "google_folder_iam_policy" "this" {
 }
 
 # Organization IAM Custom Role Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam_custom_role
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/google_organization_iam_custom_role
 
 resource "google_organization_iam_custom_role" "this" {
   for_each = var.organization_custom_iam_roles
@@ -254,7 +248,7 @@ resource "google_organization_iam_custom_role" "this" {
 }
 
 # Organization IAM Member Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam#google_organization_iam_member
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/google_organization_iam#google_organization_iam_member
 
 # Predefined roles provide granular access for a specific service and are managed by Google Cloud.
 # https://cloud.google.com/iam/docs/understanding-roles#predefined
