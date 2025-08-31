@@ -298,3 +298,9 @@ resource "google_organization_iam_member" "this" {
   org_id = var.organization_id
   role   = each.value.role
 }
+
+resource "null_resource" "force_apply" {
+  triggers = {
+    always_run = timestamp()
+  }
+}
